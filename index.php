@@ -55,9 +55,9 @@
 <link href="css/screen.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="contentwrapper">
+
 <h1 id="heading1">Welcome : <i><?php echo $_SESSION['login_user']; ?></i></h1>
-</div>
+
 <ul>
 <?php if($uploadOn==1) : ?>
   <li><a href="getride.php">Get Ride</a></li>
