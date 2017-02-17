@@ -1,8 +1,8 @@
 // Tell jQuery to give up the dollar sign
-$.noConflict();
+//$.noConflict();
 
 // jQuery 3.x-style ready event and locally scoped $
-jQuery(function($) {
+/* jQuery(function($) {
   $('html').removeClass('nojs');
   $('html').addClass('hasjs');
 });
@@ -41,4 +41,15 @@ function init(){
 
 }
 
-google.maps.event.addDomListener(window, 'load', init);
+google.maps.event.addDomListener(window, 'load', init); */
+    function initMap() {
+        var uluru = {lat: 41.834873, lng: -87.627006};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }

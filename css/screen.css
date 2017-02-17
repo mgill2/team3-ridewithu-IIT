@@ -41,4 +41,8 @@ input {
 
 
 /* ===== STATE STYLES ===== */
+       #map {
+        height: 400px;
+        width: 100%;
+       }
 
