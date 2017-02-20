@@ -25,10 +25,9 @@ function init(){
 		position: myLocation,
 		map: myMap,
 		animation: google.maps.Animation.BOUNCE,
-		icon: 'lure.png'
 	});
 
-	var contentString = '<h1>Gulf of Mexico</h1><p>Place to catch saltwater fish :)</p>';
+	var contentString = '<h1>Illinois Tech</h1><p>Where IIT Students need a ride too</p>';
 
 	var infowindow = new google.maps.InfoWindow({
       content: contentString
@@ -45,7 +44,7 @@ google.maps.event.addDomListener(window, 'load', init); */
     function initMap() {
         var uluru = {lat: 41.834873, lng: -87.627006};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 12,
           center: uluru
         });
         var marker = new google.maps.Marker({
