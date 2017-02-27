@@ -225,18 +225,23 @@ textarea {
 }
 html{
 	padding-bottom: 0.5em;
+	text-align: center;	
 }
 label{
 	padding-bottom: 0.5em;
+	text-align: center;	
 }
 p{
 	padding-bottom: 0.5em;
+	text-align: center;	
 }
 #start{
 	display:block;
 	padding-bottom: 0.5em;
+	text-align: center;	
 	
 }
 #end{
 	padding-bottom: 0.5em;
+	text-align: center;	
 }
