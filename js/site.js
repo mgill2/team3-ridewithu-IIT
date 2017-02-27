@@ -47,7 +47,7 @@ google.maps.event.addDomListener(window, 'load', init);
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
           //center: uluru
-          center: {lat: -34.397, lng: 150.644}
+          center: {lat: -41.834873, lng: -87.627006}
         });
         //var marker = new google.maps.Marker({
           //position: uluru,
@@ -55,6 +55,8 @@ google.maps.event.addDomListener(window, 'load', init);
         //});
         
         var infoWindow = new google.maps.InfoWindow({map: map});
+        var trafficLayer = new google.maps.TrafficLayer();
+        trafficLayer.setMap(map);
         
       // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -85,13 +87,11 @@ google.maps.event.addDomListener(window, 'load', init);
 
       }
 
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) 
+      {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');  
-      
-      
-      
-      
+                              'Error: Your browser doesn\'t support geolocation.'); 
+         
       }
