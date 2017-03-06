@@ -1,0 +1,8 @@
+#!/bin/bash
+
+username=$(cat users | tr [" "] [":"] | cut -d: -f1)
+usersize=${username[*]}
+
+for((i=0;i<usersize;i++))
+
+  printf "${username}[i]}"
