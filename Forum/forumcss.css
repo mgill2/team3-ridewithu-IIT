@@ -224,22 +224,29 @@ textarea {
   font: inherit; /* 2 */
 }
 html{
-	padding-bottom: 0.5em;
+	padding: 1.182em; /* 26px / ~ 120% */
 	text-align: center;	
-	background-image: url('http://previews.123rf.com/images/petrol/petrol0910/petrol091000033/5644177-Abstract-illustration-of-a-white-and-yellow-background-Stock-Vector.jpg');
+	background-image: url('https://s-media-cache-ak0.pinimg.com/originals/56/b0/22/56b022308212ba1b05fcc9bacaaf876f.jpg');
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 label{
-	padding-bottom: 0.5em;
+	
 	text-align: center;	
 }
 p{
-	padding-bottom: 0.5em;
+	/*padding-bottom: 1.5em;*/
 	text-align: center;	
+}
+
+#name{
+	display:block;
+	margin: 0 auto;
+	margin-left: auto;
+    margin-right: auto;
 }
 #start{
 	display:block;
-	padding-bottom: 0.5em;
+
 	text-align: center;	
 	
 }
