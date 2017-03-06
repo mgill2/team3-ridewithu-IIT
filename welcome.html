@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+  <title>ITMT430 Ride Share for IIT Students and Facaulty</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+  <link href="css/screen.css" rel="stylesheet" type="text/css">
+  <script type="text/php" src="php/database.php"></script>
+ 
+	
+
+</head>
+<body>
+
+  <h1 id="welcome"> Welcome to the Illinois Institute of Technology's Ride Share!</h1>
+
+<!-- <ul>
+    <?php if($uploadOn==1) : ?>
+      <li><a href="getride.php">Get Ride</a></li>
+    <?php endif; ?>
+  </ul>
+-->
+
+  <p id="warning">
+  The reason the web browser is asking for your location to be turned on is so that we can provide you will the closest facaulty member or your fellow classmate. Thank your for understanding!
+  </p>
+
+  <div id="map">
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+    <script type="text/javascript" src="js/site.js"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap">
+    </script>
+    
+  </div>
+  
+</body>
+  
+</html>

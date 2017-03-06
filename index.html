@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
-<head>
-  <title>ITMT430 Ride Share for IIT Students and Facaulty</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  <link href="css/screen.css" rel="stylesheet" type="text/css">
-  <script type="text/php" src="php/database.php"></script>
- 
-	
+<html lang="en">
 
-</head>
-<body>
+  <head>
+    <title>Login - IIT Ride Share</title>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="img/myiit.gif">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
+    <link rel="stylesheet" href="screen.css" />
+  </head>
 
-  <h1 id="welcome"> Welcome to the Illinois Institute of Technology's Ride Share!</h1>
+  <body class="login">
+    <header>
+      <h1 class="page-greeting">Illinois Tech Ride Share</h1>
+    </header>
 
-<!-- <ul>
-    <?php if($uploadOn==1) : ?>
-      <li><a href="getride.php">Get Ride</a></li>
-    <?php endif; ?>
-  </ul>
--->
+    <main>
+      <img class="logo" src="img/IITScarletHawks.png" alt="IIT Logo">
+      <!-- We would use POST but we want the login button to go to the index page -->
+      <form action="welcome.html" method="get">
+        <input type="text" placeholder="Username" id="username" name="username" title="IIT username" required>
+        <input type="password" placeholder="Password" id="password" name="password" pattern="\w{8,}" title="Password must be 8 or more characters" required>
+        <input type="submit" id="submit" name="submit" value="Login">
 
-  <p id="warning">
-  The reason the web browser is asking for your location to be turned on is so that we can provide you will the closest facaulty member or your fellow classmate. Thank your for understanding!
-  </p>
+        <div class="security">
+          <p>
+            <img src="img/secure.svg" alt="Lock" />
+            For security reasons, please sign out and exit your web browser when you are finished accessing authenticated services.
+          </p>
 
-  <div id="map">
-
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
-    <script type="text/javascript" src="js/site.js"></script>
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap">
-    </script>
-    
-  </div>
-  
-</body>
-  
+        </div>
+      </form>
+    </main>
+  </body>
 </html>
