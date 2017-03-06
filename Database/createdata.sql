@@ -4,7 +4,7 @@ USE backend;
 
 CREATE TABLE IF NOT EXISTS items
 (
-	ID INT                    NOT NULL,
+	ID MEDIUMINT AUTO_INCREMENT     NOT NULL,
 	FIRST_NAME varchar(100)   NOT NULL,
 	LAST_NAME varchar(100)    NOT NULL,
 	EMAIL varchar(100)        NOT NULL,
