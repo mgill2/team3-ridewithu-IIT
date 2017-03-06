@@ -11,3 +11,8 @@ sudo apt-get -y install apache2 php5 mysql-client php5-mysqlnd libapach2-mod-php
 #changes the hosts and hostname 
 sed 's/pleasechangeme/webserver/' /etc/hosts
 sed 's/pleasechangeme/webserver/' /etc/hostname
+
+rm -r /var/www
+cp index.html css js login Forum /var/www
+
+

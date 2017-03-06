@@ -13,7 +13,7 @@ then
   echo "update completed"
 else
   echo "update did NOT complete"
-end
+fi
 
 #adding the sql server
 sudo apt-get install -y mysql-server git curl
@@ -22,7 +22,7 @@ then
   echo "update completed"
 else
   echo "update did NOT complete"
-end
+fi
 
 #changing the address to webserver address
 sed '40,55s/0.0.0.0/192.168.1.217' /etc/mysql/my.cnf
@@ -31,7 +31,7 @@ then
   echo "update completed"
 else
   echo "update did NOT complete"
-end
+fi
 
 #reloading mysql so that it takes the new ip
 sudo service mysql reload
@@ -40,5 +40,7 @@ then
   echo "update completed"
 else
   echo "update did NOT complete"
-end
+fi
 
+#adding the users into mysql using an array
+$users = readarray 
