@@ -6,11 +6,12 @@ usersize=${username[*]}
 
 PASSWD="password"
 
+ echo "Please enter root password"
+ read rootpasswd
 
 for((i=0;i<usersize;i++))
 
-  echo "Please enter root password"
-  read rootpasswd
+ 
   
   mysql -u root -p$rootpasswd -e "CREATE USER ${username}@localhost IDENTIFIED BY '${PASSWD}';"
   #printf "${username}[i]"
