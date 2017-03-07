@@ -1,6 +1,6 @@
 {
     "builders": [{
-        "name": "ubuntu-vanilla-14045-server",
+        "name": "ubuntu-vanilla-14045-webserver",
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
         "guest_additions_mode": "disable",
