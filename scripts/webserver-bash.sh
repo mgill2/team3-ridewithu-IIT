@@ -36,6 +36,8 @@ sed 's/pleasechangeme/webserver/' /etc/hostname
 
 #adding github repo 
 repository="https://github.com/illinoistech-itm/team-3-withu.git"
+Username: 3e293382e7c9adec19edf54b8ff7e259143725bb
+Password:
 #localFolder=~/
 git clone "$repository"
 if [ $? = 0 ]
