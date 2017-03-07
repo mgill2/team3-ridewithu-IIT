@@ -16,7 +16,9 @@ else
 fi
 
 #adding the sql server
-sudo apt-get install -y mysql-server git curl
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password Password'   
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password Password'
+sudo apt-get -y install mysql-server
 if [ $? = 0 ]
 then
   echo "update completed"
@@ -25,20 +27,21 @@ else
 fi
 
 #changing the address to webserver address
-sed '40,55s/0.0.0.0/192.168.1.217' /etc/mysql/my.cnf
-if [ $? = 0 ]
-then
-  echo "update completed"
-else
-  echo "update did NOT complete"
-fi
+#sed '40,55s/0.0.0.0/192.168.1.217' /etc/mysql/my.cnf
+#if [ $? = 0 ]
+#then
+#  echo "update completed"
+#else
+#  echo "update did NOT complete"
+#fi
 
 #reloading mysql so that it takes the new ip
-sudo service mysql reload
-if [ $? = 0 ]
-then
-  echo "update completed"
-else
-  echo "update did NOT complete"
-fi
+#sudo service mysql reload
+#if [ $? = 0 ]
+#then
+#  echo "update completed"
+#else
+#  echo "update did NOT complete"
+#fi
 
+exit 0
