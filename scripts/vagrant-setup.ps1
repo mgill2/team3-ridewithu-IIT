@@ -20,4 +20,7 @@ vagrant.exe box add --name webserver ubuntu-vanilla-14045-webserver-virtualbox.b
 #getting box up and running
 cd "./webserver"
 
-vagrant.exe init ubuntu-vanilla-14045-webserver-virtualbox.box
+vagrant.exe init webserver
+vagrant.exe up
+vagrant.exe ssh
+
