@@ -15,9 +15,18 @@ else
   echo "update did NOT complete"
 fi
 
+#installing debconf-utils
+sudo apt-get install -y debconf-utils
+if [ $? = 0 ]
+then
+  echo "installed debconf-utils"
+else
+  echo "update did NOT complete"
+fi
+
 #adding the sql server
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password Password'   
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password Password'
+echo "mysql-server mysql-server/root_password password Password" | sudo debconf-set-selections 
+echo "mysql-server mysql-server/root_password_again password Password" | sudo debconf-set-selections
 sudo apt-get -y install mysql-server
 if [ $? = 0 ]
 then
