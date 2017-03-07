@@ -42,5 +42,3 @@ else
   echo "update did NOT complete"
 fi
 
-#adding the users into mysql using an array
-$users = readarray 
