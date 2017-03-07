@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 #this is for adding elements to the database server client
 
@@ -12,7 +12,7 @@ sudo apt-get -y install apache2 php5 mysql-client php5-mysqlnd libapach2-mod-php
 sed 's/pleasechangeme/webserver/' /etc/hosts
 sed 's/pleasechangeme/webserver/' /etc/hostname
 
-rm -r /var/www
+rm -r /var/www/html
 cp index.html css js login Forum /var/www
 
 
