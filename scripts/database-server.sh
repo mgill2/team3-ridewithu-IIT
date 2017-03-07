@@ -21,7 +21,7 @@ if [ $? = 0 ]
 then
   echo "installed debconf-utils"
 else
-  echo "update did NOT complete"
+  echo "debconf did NOT complete"
 fi
 
 #adding the sql server
@@ -30,9 +30,9 @@ echo "mysql-server mysql-server/root_password_again password Password" | sudo de
 sudo apt-get -y install mysql-server
 if [ $? = 0 ]
 then
-  echo "update completed"
+  echo "installed mysql server!"
 else
-  echo "update did NOT complete"
+  echo "mysql install did NOT complete"
 fi
 
 #changing the address to webserver address
