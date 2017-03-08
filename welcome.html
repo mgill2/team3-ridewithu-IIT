@@ -11,8 +11,8 @@
 <body class="index">
 	<header>
       <div class="banner">
-        <a href="index.html">
-          <img src="img/header.gif" alt="IIT Logo">
+        <a href="welcome.html">
+          <img src="img/IITScarletHawks.png" alt="IIT Logo">
         </a>
       </div>
       <nav>
@@ -29,8 +29,23 @@
       </nav>
     </header>
     
-  <h1 id="welcome"> Welcome to the Illinois Institute of Technology's Ride Share!</h1>
-
+    <main>
+      <section class="greeting">
+        Welcome, User!
+      </section>
+      <section class="news">
+	  <article>
+          <header>
+            <h3>Public Safety</h3>
+          </header>
+          <h4>Emergency Phone Numbers</h4>
+          	  <p><strong>Main Campus</strong>: 312.808.6363</p>
+    		  <p><strong>Downtown Campus</strong>: 312.906.5030</p>
+    		  <p><strong>Moffett Campus</strong>: 708.563.8280</p>
+    		  <p><strong>Rice Campus</strong>: 630.682.6054</p>
+        </article>
+      </section>
+    </main>
   <ul>
     <?php if($uploadOn==1) : ?>
       <li><a href="getride.php">Get Ride</a></li>
@@ -46,10 +61,6 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap">
     </script>
-    
-    <p id="warning">
-  	
-  	</p>
     
   </div>
   
