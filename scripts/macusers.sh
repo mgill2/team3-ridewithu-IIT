@@ -1,5 +1,6 @@
 #!/bin/bash -xe
 
+#make sure to chmod this script to run
 #adding boxes for vagrant
 
 #changing directory
