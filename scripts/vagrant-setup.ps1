@@ -1,4 +1,6 @@
 #going to the directory for database
+#need to set-execution policy to unresricted to run this script then after
+# you run the script and are done make sure to set-execution policy to restricted
 
 cd "../build"
 
