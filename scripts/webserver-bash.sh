@@ -1,5 +1,21 @@
 #!/bin/bash -xe
 
+# http://superuser.com/questions/196848/how-do-i-create-an-administrator-user-on-ubuntu
+# http://unix.stackexchange.com/questions/1416/redirecting-stdout-to-a-file-you-dont-have-write-permission-on
+# This line assumes the user you created in the preseed directory is vagrant
+echo "vagrant ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/init-users
+sudo cat /etc/sudoers.d/init-users
+
+
+# Installing vagrant keys
+wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub'
+sudo mkdir -p /home/vagrant/.ssh
+sudo chown -R vagrant:vagrant /home/vagrant/.ssh
+cat ./vagrant.pub >> /home/vagrant/.ssh/authorized_keys
+sudo chown -R vagrant:vagrant /home/vagrant/.ssh/authorized_keys
+echo "All Done!"
+
+
 #this is for adding elements to the webserver client
 
 #updating
@@ -32,28 +48,30 @@ fi
 
 #changes the hosts and hostname 
 #sed 's/pleasechangeme/webserver/' /etc/hosts
-sed 's/pleasechangeme/webserver/' /etc/hostname
-if [ $? = 0 ]
-then
-  echo "sed updated the host and hostname files"
-else
-  echo "sed did NOT complete"
-fi
+#sed 's/pleasechangeme/webserver/' /etc/hostname
+#if [ $? = 0 ]
+#then
+#  echo "sed updated the host and hostname files"
+#  echo "restarting"
+#  shutdown -r now
+#else
+#  echo "sed did NOT complete"
+#fi
 
 #adding github repo 
 #repository="https://github.com/illinoistech-itm/team-3-withu.git"
-#Username: 3e293382e7c9adec19edf54b8ff7e259143725bb
-#Password:
 #localFolder=~/
 #git clone "$repository"
+#Username: 3e293382e7c9adec19edf54b8ff7e259143725bb
+#Password:
 
-#git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bbgithub.com/illinoistech-itm/team-3-withu/repo.git"
-#if [ $? = 0 ]
-#then
-#  echo "added git hub repo successfully"
-#else
-#  echo "github clone did NOT complete"
-#fi
+git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
+if [ $? = 0 ]
+then
+  echo "added git hub repo successfully"
+else
+  echo "github clone did NOT complete"
+fi
 
 #removes the default page and adds our webpages, css, and js
 rm -r /var/www/html
