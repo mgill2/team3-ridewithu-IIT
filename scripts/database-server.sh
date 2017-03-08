@@ -58,7 +58,7 @@ else
 fi
 
 #changing the address to webserver address
-sed -i 's/127\.0\.0\.1/192\.168\.1\.217' /etc/mysql/my.cnf
+sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
