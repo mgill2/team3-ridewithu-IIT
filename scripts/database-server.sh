@@ -3,8 +3,14 @@
 #adding elements to the database server
 
 #changing host and hostname
-sed 's/pleasechangeme/database/' /etc/hosts
+#sed 's/pleasechangeme/database/' /etc/hosts
 sed 's/pleasechangeme/database/' /etc/hostname
+if [ $? = 0 ]
+then
+  echo "sed updated the host and hostname files"
+else
+  echo "sed did NOT complete"
+fi
 
 #updating the system
 sudo apt-get update -y
@@ -36,21 +42,21 @@ else
 fi
 
 #changing the address to webserver address
-#sed '40,55s/0.0.0.0/192.168.1.217' /etc/mysql/my.cnf
-#if [ $? = 0 ]
-#then
-#  echo "update completed"
-#else
-#  echo "update did NOT complete"
-#fi
+sed -i 's/0\.0\.0\.0/192\.168\.1\.217' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "sed updated the my.cnf file"
+else
+  echo "sed did NOT complete"
+fi
 
 #reloading mysql so that it takes the new ip
-#sudo service mysql reload
-#if [ $? = 0 ]
-#then
-#  echo "update completed"
-#else
-#  echo "update did NOT complete"
-#fi
+sudo service mysql reload
+if [ $? = 0 ]
+then
+  echo "mysql reload completed"
+else
+  echo "mysql did NOT complete"
+fi
 
 exit 0
