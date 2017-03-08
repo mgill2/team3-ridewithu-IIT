@@ -14,6 +14,18 @@ vagrant init database-server
 vagrant up 
 vagrant ssh
 
+#changing directories to build
+cd "../"
+
+#adding webserver box to box list
+vagrant box add ubuntu-vanilla-14045-webserver-virtualbox.box --name webserver2
+
+#getting box up and running
+cd "./webserver"
+
+vagrant init webserver2
+vagrant up
+vagrant ssh
 
 
 
