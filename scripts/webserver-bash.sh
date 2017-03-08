@@ -31,21 +31,29 @@ else
 fi
 
 #changes the hosts and hostname 
-sed 's/pleasechangeme/webserver/' /etc/hosts
+#sed 's/pleasechangeme/webserver/' /etc/hosts
 sed 's/pleasechangeme/webserver/' /etc/hostname
-
-#adding github repo 
-repository="https://github.com/illinoistech-itm/team-3-withu.git"
-Username: 3e293382e7c9adec19edf54b8ff7e259143725bb
-Password:
-#localFolder=~/
-git clone "$repository"
 if [ $? = 0 ]
 then
-  echo "added git hub repo successfully"
+  echo "sed updated the host and hostname files"
 else
-  echo "github clone did NOT complete"
+  echo "sed did NOT complete"
 fi
+
+#adding github repo 
+#repository="https://github.com/illinoistech-itm/team-3-withu.git"
+#Username: 3e293382e7c9adec19edf54b8ff7e259143725bb
+#Password:
+#localFolder=~/
+#git clone "$repository"
+
+#git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bbgithub.com/illinoistech-itm/team-3-withu/repo.git"
+#if [ $? = 0 ]
+#then
+#  echo "added git hub repo successfully"
+#else
+#  echo "github clone did NOT complete"
+#fi
 
 #removes the default page and adds our webpages, css, and js
 rm -r /var/www/html
