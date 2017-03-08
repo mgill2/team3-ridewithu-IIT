@@ -22,12 +22,37 @@ then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, o
 if you dont feel comforatable doing the script do this
 
 go to the /team-3-withu/build
-create two folders 
 
 vagrant box add ubuntu14045-vanilla-database.box --name database-server
 vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
 
+go into database folder
+vagrant init databaser-server
+vagrant up
+vagrant ssh
 
+go to webserver folder 
+vagrant init webserver2
+vagrant up 
+vagrant ssh
+
+For Windows Users
+packer build -force ubuntu14045-vanilla-database.json
+packer build -force ubuntu14045-vanilla-webserver.json
+
+then run vagrant-setup.ps1 
+
+or if your doing it manually these steps
+
+go into database folder
+vagrant init databaser-server
+vagrant up
+vagrant ssh
+
+go to webserver folder 
+vagrant init webserver2
+vagrant up 
+vagrant ssh
 
 after that you have everything ready to go
 
