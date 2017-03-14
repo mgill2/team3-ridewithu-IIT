@@ -1,0 +1,20 @@
+# Compiled Source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.vbox
+*.box
+
+output-ubuntu-vanilla-14045*/
+
+# Packages #
+############
+
+#Unpack the files first because git hub uses its own compression 
+*.zip
+*.dm
+*.iso
+*.tar
+*.gz
