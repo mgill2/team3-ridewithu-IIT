@@ -11,7 +11,6 @@ Alejandro- *Security*
 
 For scripting: Need to know
 
-RUN ALL COMMANDS IN THE SCRIPTING FOLDER
 All the users first clone this directory:
 https://github.com/illinoistech-itm/team-3-withu.git
 
@@ -54,6 +53,8 @@ vagrant up
 vagrant ssh
 
 For Windows Users
+
+Assuming that users are in scripts directory
 
 packer build -force ubuntu14045-vanilla-database.json
 
