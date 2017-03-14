@@ -36,6 +36,10 @@ vagrant box add ubuntu14045-vanilla-database.box --name database-server
 
 vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
 
+For Mac/Linux Users (if you going to run the a script run macusers.sh this is becuase there is a powershell script for this but we also made one for mac/linux users to run vagrant ssh, init, and up)
+
+Or you can do it manually
+
 go into database folder
 
 vagrant init databaser-server
