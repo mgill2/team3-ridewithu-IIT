@@ -54,6 +54,12 @@ vagrant ssh
 
 For Windows Users
 
+You have to run Set-ExecutionpPolicy while in an Administrator Shell
+
+Set that to unrestricted
+
+And yes, after you are done running the script then change it back to restricted for security purposes
+
 Assuming that users are in scripts directory
 
 packer build -force ubuntu14045-vanilla-database.json
