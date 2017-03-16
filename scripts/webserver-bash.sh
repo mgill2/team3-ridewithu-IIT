@@ -22,9 +22,9 @@ echo "All Done!"
 sudo apt-get update -y
 if [ $? = 0 ]
 then
-  echo "added git hub repo successfully"
+  echo "updated successfully"
 else
-  echo "github clone did NOT complete"
+  echo "update did NOT complete"
 fi
 
 #upgrading
