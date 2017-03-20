@@ -191,6 +191,11 @@ table {
     margin-left: 50px;
 }
 
+#mainnavbar {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
 .nav-logo {
   margin: 0 1em;
   height: 2em;
