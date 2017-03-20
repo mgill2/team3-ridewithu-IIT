@@ -74,7 +74,15 @@ else
 fi
 
 #removes the default page and adds our webpages, css, and js
-#rm -r /var/www/html/
+sudo mkdir /var/www/html
+sudo rm /var/www/html/index.html
+if [ $? = 0 ]
+then
+  echo "removed index.html"
+else
+  echo "remove did NOT complete"
+fi
+
 cd team-3-withu
 sudo cp index.html welcome.html css js form.html forumcss.css img php screen.css /var/www/html
 if [ $? = 0 ]
