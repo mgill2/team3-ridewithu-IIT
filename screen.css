@@ -123,7 +123,7 @@ table {
   height: 6.313em;
 }
 
-.navbar {
+/* .navbar {
   min-width: 100%;
   margin: 0;
   padding: 0;
@@ -159,7 +159,7 @@ table {
   background-color: #eee;
   color: #222;
 }
-
+*/
 .nav-logo {
   margin: 0 1em;
   height: 2em;
