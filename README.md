@@ -36,7 +36,10 @@ vagrant box add ubuntu14045-vanilla-database.box --name database-server
 
 vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
 
-For Mac/Linux Users (if you going to run the a script run macusers.sh this is becuase there is a powershell script for this but we also made one for mac/linux users to run vagrant ssh, init, and up)
+For Mac/Linux Users (if you going to run the a script run macusers.sh this is becuase there is a powershell script for this but we also made one for mac/linux users to run vagrant init and up)
+
+cd up a directory and then go into the build cd into webserver and vagrant ssh
+then open another terminal and go to the build directory and then database and do vagrant ssh
 
 Or you can do it manually
 
@@ -76,6 +79,9 @@ packer build -force ubuntu14045-vanilla-database.json
 packer build -force ubuntu14045-vanilla-database.json
 
 then run vagrant-setup.ps1 
+
+cd up a directory and then go into the build cd into webserver and vagrant ssh
+then open another terminal and go to the build directory and then database and do vagrant ssh
 
 or if your doing it manually these steps
 
