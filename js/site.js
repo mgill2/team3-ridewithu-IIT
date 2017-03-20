@@ -41,6 +41,10 @@ function init(){
 }
 google.maps.event.addDomListener(window, 'load', init);
 */
+function openNav() {
+  document.getElementById("sidenavbar").style.width = "250px";
+  document.getElementById("mainnavbar").style.marginLeft = "250px";
+}
 
     function initMap() {
         //var uluru = {lat: 41.834873, lng: -87.627006};
