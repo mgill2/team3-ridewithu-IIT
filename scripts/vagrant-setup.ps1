@@ -10,8 +10,7 @@ vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name databa
 #getting box up and running
 cd "./database"
 vagrant.exe init database-server
-vagrant.exe up 
-vagrant.exe ssh
+vagrant.exe up
 
 #changing directories to build
 cd "../"
@@ -24,5 +23,5 @@ cd "./webserver"
 
 vagrant.exe init webserver2
 vagrant.exe up
-vagrant.exe ssh
+
 
