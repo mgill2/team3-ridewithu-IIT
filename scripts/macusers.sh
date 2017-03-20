@@ -12,8 +12,7 @@ vagrant box add --name database-server ./ubuntu-vanilla-14045-database-virtualbo
 #getting box up and running
 cd "./database"
 vagrant init database-server
-vagrant up 
-vagrant ssh
+vagrant up
 
 #changing directories to build
 cd "../"
@@ -26,7 +25,6 @@ cd "./webserver"
 
 vagrant init webserver2
 vagrant up
-vagrant ssh
 
 
 
