@@ -196,6 +196,13 @@ table {
     padding: 16px;
 }
 
+.navbar .nav a:hover,
+.navbar .nav a:active,
+.navbar .nav.active a {
+  background-color: #eee;
+  color: #222;
+}
+
 .nav-logo {
   margin: 0 1em;
   height: 2em;
