@@ -75,7 +75,7 @@ fi
 
 #removes the default page and adds our webpages, css, and js
 #rm -r /var/www/html/
-cd "team-3-withu"
+cd team-3-withu
 cp index.html welcome.html ./css ./js form.html forumcss.css ./img ./php screen.css /var/www/html
 if [ $? = 0 ]
 then
