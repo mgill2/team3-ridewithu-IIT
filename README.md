@@ -66,9 +66,14 @@ And yes, after you are done running the script then change it back to restricted
 
 Assuming that users are in scripts directory
 
-packer build -force ubuntu14045-vanilla-database.json
+packer build --force ubuntu14045-vanilla-database.json
 
-packer build -force ubuntu14045-vanilla-webserver.json
+packer build --force ubuntu14045-vanilla-webserver.json
+
+or for windows users 
+
+packer build -force ubuntu14045-vanilla-database.json
+packer build -force ubuntu14045-vanilla-database.json
 
 then run vagrant-setup.ps1 
 
@@ -80,15 +85,11 @@ vagrant init databaser-server
 
 vagrant up
 
-vagrant ssh
-
 go to webserver folder 
 
 vagrant init webserver2
 
 vagrant up 
-
-vagrant ssh
 
 after that you have everything ready to go
 
