@@ -377,10 +377,10 @@ MEDIA QUERIES START
   }
 }
 @media screen and (min-width: 48em) {
-  .navbar {
+  /*.navbar {
     display: flex;
   }
-
+*/
   .calendar {
     display: block;
   }
