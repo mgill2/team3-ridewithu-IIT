@@ -33,7 +33,11 @@
         $stmt->fetch();
 
       if($stmt->num_rows == 1) {
-                 
-      } 
+        //check if password is matches with database
+          if (password_verify($password, $member_password)) {
+            //password is correct
+                          
+          } 
+      }
   }
 ?>
