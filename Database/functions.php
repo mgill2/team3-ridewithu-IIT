@@ -36,7 +36,15 @@
         //check if password is matches with database
           if (password_verify($password, $member_password)) {
             //password is correct
-                          
+            $user_browser = $_SERVER['HTTP_USER_AGENT'];
+
+            $user_id = preg_replace("/[^0-9]+/", "", $user_id);
+            $_SESSION['user_id'] = $user_id;
+            //protection
+            $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
+            $_SESSION['username'] = $username;
+            $_SESSION['credentials'] = hash('dipen20695', $member_password . $user_browser);
+            return true; //login successful                 
           } 
       }
   }
