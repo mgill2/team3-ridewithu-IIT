@@ -71,7 +71,31 @@
           $stmt->bind_param('i', $user_id);
           $stmt->execute();
           $stmt->store_result();
+
+          if ($stmt->num_rows == 1) {
+            //it returns true only if logged in user exists
+            $stmt->bind_result($password);
+            $stmt->fetch();
+            $login_check = hash('dipen20695', $password . $user_browser);
+
+            if (hash_equals($login_check, $credentials)) {
+              //user should be logged in
+              return true;
+            }
+            else {
+              return false;
+            }
+          }
+          else {
+            return false;
+          }
       }
+      else {
+        return false;
+      }
+    }
+    else {
+      return false;
     }
   }
 ?>
