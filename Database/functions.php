@@ -20,4 +20,8 @@
     session_start();            // Start the PHP session 
     session_regenerate_id(true);    // regenerated the session, delete the old one. 
 }
+
+  function login($email, $password, $mysqli) {
+ 
+  }
 ?>
