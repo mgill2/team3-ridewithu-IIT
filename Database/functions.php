@@ -30,7 +30,10 @@
 
       //now getting variables from this query
         $stmt->bind_result($member_id, $member_fname, $member_lname, $member_username, $member_password);
-        $stmt->fetch();        
+        $stmt->fetch();
+
+      if($stmt->num_rows == 1) {
+                 
       } 
   }
 ?>
