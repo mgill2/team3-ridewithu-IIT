@@ -45,7 +45,14 @@
             $_SESSION['username'] = $username;
             $_SESSION['credentials'] = hash('dipen20695', $member_password . $user_browser);
             return true; //login successful                 
-          } 
+          }
+          else {
+            return false;
+          }
+        }
+        else {
+          return false;
+        } 
       }
   }
 ?>
