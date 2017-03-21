@@ -22,11 +22,12 @@ cd scripts
 
 FOR MAC USERS run:
 
-packer build -force ubuntu14045-vanilla-database.json
+packer build --force ubuntu14045-vanilla-database.json
 
-packer build -force ubuntu14045-vanilla-webserver.json
+packer build --force ubuntu14045-vanilla-webserver.json
 
 then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or vagrant ssh (work in progress))
+For Mac/Linux Users (if you going to run the a script run macusers.sh this is becuase there is a powershell script for this but we also made one for mac/linux users to run vagrant init and up)
 
 if you dont feel comforatable doing the script do this
 
@@ -36,14 +37,15 @@ vagrant box add ubuntu14045-vanilla-database.box --name database-server
 
 vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
 
-For Mac/Linux Users (if you going to run the a script run macusers.sh this is becuase there is a powershell script for this but we also made one for mac/linux users to run vagrant init and up)
+cd up a directory and then go into the build cd into webserver (if you do not have a folder create one) then
+vagrant ssh
 
-cd up a directory and then go into the build cd into webserver and vagrant ssh
-then open another terminal and go to the build directory and then database and do vagrant ssh
+then open another terminal and go to the build directory and then database and do 
+vagrant ssh
 
 Or you can do it manually
 
-go into database folder
+go into database folder (add one if you do not have one in build)
 
 vagrant init databaser-server
 
@@ -51,7 +53,7 @@ vagrant up
 
 vagrant ssh
 
-go to webserver folder 
+go to webserver folder (add one if you do not have one in build) 
 
 vagrant init webserver2
 
@@ -61,24 +63,22 @@ vagrant ssh
 
 For Windows Users
 
+packer build --force ubuntu14045-vanilla-database.json
+packer build --force ubuntu14045-vanilla-database.json
+
+For running the script vagrant-setup.ps1
+
 You have to run Set-ExecutionpPolicy while in an Administrator Shell
 
 Set that to unrestricted
 
-And yes, after you are done running the script then change it back to restricted for security purposes
+Then Yes
 
 Assuming that users are in scripts directory
 
-packer build --force ubuntu14045-vanilla-database.json
+run vagrant-setup.ps1
 
-packer build --force ubuntu14045-vanilla-webserver.json
-
-or for windows users 
-
-packer build -force ubuntu14045-vanilla-database.json
-packer build -force ubuntu14045-vanilla-database.json
-
-then run vagrant-setup.ps1 
+After you are done running the script then change it back to restricted for security purposes
 
 cd up a directory and then go into the build cd into webserver and vagrant ssh
 then open another terminal and go to the build directory and then database and do vagrant ssh
@@ -91,11 +91,15 @@ vagrant init databaser-server
 
 vagrant up
 
+vagrant ssh
+
 go to webserver folder 
 
 vagrant init webserver2
 
 vagrant up 
+
+vagrant ssh
 
 after that you have everything ready to go
 

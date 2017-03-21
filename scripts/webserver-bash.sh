@@ -74,7 +74,7 @@ else
 fi
 
 #removes the default page and adds our webpages, css, and js
-sudo mkdir /var/www/html
+#sudo mkdir /var/www/html
 sudo rm /var/www/html/index.html
 if [ $? = 0 ]
 then
@@ -84,7 +84,7 @@ else
 fi
 
 cd team-3-withu
-sudo cp index.html welcome.html css js form.html forumcss.css img php screen.css /var/www/html
+sudo cp -r index.html welcome.html js form.html forumcss.css img php screen.css /var/www/html
 if [ $? = 0 ]
 then
   echo "copied info into /var/www/html"
