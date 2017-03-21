@@ -56,7 +56,7 @@
       }
   }
 
-  function login_users_only {
-    
+  function login_users_only($mysqli) {
+
   }
 ?>
