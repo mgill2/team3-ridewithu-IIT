@@ -65,6 +65,13 @@
       $credentials = $_SESSION['credentails'];
 
       $user_browser = $_SERVER['HTTP_USER_AGENT'];
+
+      if ($stmt = $mysqli->prepare("SELECT PASSWORD FROM items
+           WHERE id=? LIMIT 1")) {
+          $stmt->bind_param('i', $user_id);
+          $stmt->execute();
+          $stmt->store_result();
+      }
     }
   }
 ?>
