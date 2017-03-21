@@ -57,6 +57,14 @@
   }
 
   function login_users_only($mysqli) {
+    //checking if the session variables are set or not
+    if (isset($_SESSION['user_id'], $_SESSION['username'],
+        $_SESSION['credentials'])) {
+      $user_id = $_SESSION['user_id'];
+      $username = $_SESSION['username'];
+      $credentials = $_SESSION['credentails'];
 
+      $user_browser = $_SERVER['HTTP_USER_AGENT'];
+    }
   }
 ?>
