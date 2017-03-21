@@ -22,6 +22,15 @@
 }
 
   function login($email, $password, $mysqli) {
- 
+    if ($stmt = $mysqli->prepare("SELECT ID, FIRST_NAME, LAST_NAME, USERNAME, PASSWORD
+      FROM items WHERE EMAIL=? LIMIT 1")) {
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $stmt->store_result();
+
+      //now getting variables from this query
+        $stmt->bind_result($member_id, $member_fname, $member_lname, $member_username, $member_password);
+        $stmt->fetch();        
+      } 
   }
 ?>
