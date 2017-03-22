@@ -76,7 +76,8 @@ else
 fi
 
 
-mysql -u root <<MYSQL_SCRIPT
+mysql -uroot -pPassword <<MYSQL_SCRIPT
+
 
 CREATE DATABASE IF NOT EXISTS slave;
 
@@ -86,16 +87,18 @@ CREATE TABLE IF NOT EXISTS items
 (
 	ID MEDIUMINT NOT NULL AUTO_INCREMENT,
 	FIRST_NAME varchar(100)   NOT NULL,
+  
 	LAST_NAME varchar(100)    NOT NULL,
 	EMAIL varchar(100)        NOT NULL,
     PRIMARY KEY (ID)
 );
-CREATE USER 'dbadminslave'@'localhost' IDENTIFIED BY '$PASS';
-GRANT ALL PRIVILEGES ON master.* TO 'dbadmin'@'localhost';
+CREATE USER 'dbadminslave'@'localhost' IDENTIFIED BY 'Password';
+GRANT ALL PRIVILEGES ON slave.* TO 'dbadmin'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
 echo "Created table and user dbadmin"
+echo "Password is $PASS"
 
 
 exit 0
