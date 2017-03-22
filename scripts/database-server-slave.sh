@@ -75,4 +75,28 @@ else
   echo "mysql did NOT complete"
 fi
 
+PASS=`pwgen -s 40 1`
+
+mysql -u root <<MYSQL_SCRIPT
+
+CREATE DATABASE IF NOT EXISTS slave;
+
+USE slave;
+
+CREATE TABLE IF NOT EXISTS items
+(
+	ID MEDIUMINT NOT NULL AUTO_INCREMENT,
+	FIRST_NAME varchar(100)   NOT NULL,
+	LAST_NAME varchar(100)    NOT NULL,
+	EMAIL varchar(100)        NOT NULL,
+    PRIMARY KEY (ID)
+);
+CREATE USER 'dbadminslave'@'localhost' IDENTIFIED BY '$PASS';
+GRANT ALL PRIVILEGES ON master.* TO 'dbadmin'@'localhost';
+FLUSH PRIVILEGES;
+MYSQL_SCRIPT
+
+echo "Created table and user dbadmin"
+echo "$PASS"
+
 exit 0
