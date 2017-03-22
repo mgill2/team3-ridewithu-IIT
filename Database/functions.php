@@ -43,7 +43,7 @@
             //protection
             $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
             $_SESSION['username'] = $username;
-            $_SESSION['credentials'] = hash('dipen20695', $member_password . $user_browser);
+            $_SESSION['credentials'] = hash('sha512', $member_password . $user_browser);
             return true; //login successful                 
           }
           else {
@@ -76,7 +76,7 @@
             //it returns true only if logged in user exists
             $stmt->bind_result($password);
             $stmt->fetch();
-            $login_check = hash('dipen20695', $password . $user_browser);
+            $login_check = hash('sha512', $password . $user_browser);
 
             if (hash_equals($login_check, $credentials)) {
               //user should be logged in
@@ -98,4 +98,6 @@
       return false;
     }
   }
+
+
 ?>
