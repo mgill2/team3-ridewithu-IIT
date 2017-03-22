@@ -75,7 +75,6 @@ else
   echo "mysql did NOT complete"
 fi
 
-PASS=`pwgen -s 40 1`
 
 mysql -u root <<MYSQL_SCRIPT
 
@@ -97,6 +96,6 @@ FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
 echo "Created table and user dbadmin"
-echo "$PASS"
+
 
 exit 0
