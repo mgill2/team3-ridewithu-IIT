@@ -67,7 +67,6 @@ else
 fi
 
 #removes the default page and adds our webpages, css, and js
-#sudo mkdir /var/www/html
 sudo rm /var/www/html/index.html
 if [ $? = 0 ]
 then
