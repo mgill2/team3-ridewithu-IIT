@@ -58,13 +58,6 @@ fi
 #  echo "sed did NOT complete"
 #fi
 
-#adding github repo 
-#repository="https://github.com/illinoistech-itm/team-3-withu.git"
-#localFolder=~/
-#git clone "$repository"
-#Username: 3e293382e7c9adec19edf54b8ff7e259143725bb
-#Password:
-
 git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
 if [ $? = 0 ]
 then
