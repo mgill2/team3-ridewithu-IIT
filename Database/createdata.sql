@@ -8,5 +8,7 @@ CREATE TABLE IF NOT EXISTS items
 	FIRST_NAME varchar(100)   NOT NULL,
 	LAST_NAME varchar(100)    NOT NULL,
 	EMAIL varchar(100)        NOT NULL,
+	USERNAME varchar(50)      NOT NULL,
+	PASSWORD varchar(50)      NOT NULL,
     PRIMARY KEY (ID)
 );
