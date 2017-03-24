@@ -5,7 +5,7 @@
   define("HOST", "192.168.0.156");  //The database server 
   define("USER", "team3rocks");   //Created user that have all the rights to the database
   define("PASSWORD", "jeremytheboss");    //The password associated with the created user
-  define("DATABASE", "back-end");
+  define("DATABASE", "backend");
 
   define("CAN_REGISTER", "any");
   define("DEFAULT_ROLE", "member");
