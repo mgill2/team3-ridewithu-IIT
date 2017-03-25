@@ -67,7 +67,7 @@ else
 fi
 
 #reloading mysql so that it takes the new ip
-sudo service mysql reload
+sudo service mysql restart
 if [ $? = 0 ]
 then
   echo "mysql reload completed"
