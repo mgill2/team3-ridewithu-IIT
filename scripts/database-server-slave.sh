@@ -67,7 +67,7 @@ else
 fi
 
 #reloading mysql so that it takes the new ip
-sudo service mysql reload
+sudo service mysql restart
 if [ $? = 0 ]
 then
   echo "mysql reload completed"
@@ -75,8 +75,8 @@ else
   echo "mysql did NOT complete"
 fi
 
-
-mysql -uroot -pPassword <<MYSQL_SCRIPT
+#running mysql commands to install database slave
+mysql -u "root" "-pPassword" <<MYSQL_SCRIPT
 
 
 CREATE DATABASE IF NOT EXISTS slave;
@@ -97,8 +97,12 @@ GRANT ALL PRIVILEGES ON slave.* TO 'dbadmin'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
-echo "Created table and user dbadmin"
-echo "Password is $PASS"
+if [ $? = 0 ]
+then
+  echo "mysql database created"
+else
+  echo "creating mysql database did NOT complete"
+fi
 
 
 exit 0
