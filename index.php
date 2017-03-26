@@ -22,6 +22,8 @@ else {
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
     <link rel="stylesheet" href="screen.css" />
+    <script type="text/JavaScript" src="js/sha512.js"></script>
+    <script type="text/JavaScript" src="js/forms.js"></script>
   </head>
 
   <body class="login">
@@ -39,7 +41,7 @@ else {
       <!-- We would use POST but we want the login button to go to the index page -->
       <form action="Database/process_login.php" method="post" name="login_form">
         <input type="text" placeholder="Username" id="username" name="username" title="IIT username" required>
-        <input type="password" placeholder="Password" id="password" title="Password must be 8 or more characters" required>
+        <input type="password" placeholder="Password" name="password" id="password" title="Password must be 8 or more characters" required>
        <!--name="password"-->
         <input type="submit" id="submit" name="submit" value="Login" onclick="formhash(this.form, this.form.password);" />
 
