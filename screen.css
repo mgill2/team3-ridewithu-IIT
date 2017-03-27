@@ -284,11 +284,11 @@ INDEX-SPECIFIC STYLES START
   background-image: url(../img/key.svg);
 }
 
-.login input[type="submit"]:hover {
+.login input[type="button"]:hover {
   color: grey;
 }
 
-.login input[type="submit"] {
+.login input[type="button"] {
   margin-bottom: 1em;
 }
 

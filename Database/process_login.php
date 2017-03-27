@@ -13,9 +13,11 @@
   		header('Location: ../welcome.php');
   	}
   	else {
-  		header('Location: ../index.html?error=1');
+  		header('Location: ../index.php?error=1');
   	}
   }
   else {
   	echo 'Invalid credentials';
   }
+
+?>

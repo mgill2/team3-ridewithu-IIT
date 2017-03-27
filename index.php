@@ -40,10 +40,10 @@ else {
       <img class="logo" src="img/IITScarletHawks.png" alt="IIT Logo">
       <!-- We would use POST but we want the login button to go to the index page -->
       <form action="Database/process_login.php" method="post" name="login_form">
-        <input type="text" placeholder="Username" id="username" name="username" title="IIT username" required>
-        <input type="password" placeholder="Password" name="password" id="password" title="Password must be 8 or more characters" required>h
+        <input type="text" placeholder="Username" id="email" name="email" title="IIT username" required>
+        <input type="password" placeholder="Password" name="password" id="password" title="Password must be 8 or more characters" required>
        <!--name="password"-->
-        <input type="button" id="submit" name="submit" value="Login" onclick="formhash(this.form, this.form.password);" />
+        <input type="button" id="loginBtn" name="loginBtn" value="Login" onclick="formhash(this.form, this.form.password);" />
 
         <div class="security">
           <p>
