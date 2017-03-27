@@ -57,52 +57,33 @@ else
   echo "mysql install did NOT complete"
 fi
 
-#changing the address to webserver address
-sed -i 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
+
+git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
 if [ $? = 0 ]
 then
-  echo "sed updated the my.cnf file"
+  echo "added git hub repo successfully"
 else
-  echo "sed did NOT complete"
+  echo "github clone did NOT complete"
 fi
 
-#reloading mysql so that it takes the new ip
-sudo service mysql restart
-if [ $? = 0 ]
-then
-  echo "mysql reload completed"
-else
-  echo "mysql did NOT complete"
-fi
-
-#running mysql commands to install database slave
-mysql -u "root" "-pPassword" <<MYSQL_SCRIPT
-
-
-CREATE DATABASE IF NOT EXISTS slave;
-
-USE slave;
-
-CREATE TABLE IF NOT EXISTS items
-(
-	ID MEDIUMINT NOT NULL AUTO_INCREMENT,
-	FIRST_NAME varchar(100)   NOT NULL,
-  
-	LAST_NAME varchar(100)    NOT NULL,
-	EMAIL varchar(100)        NOT NULL,
-    PRIMARY KEY (ID)
-);
-CREATE USER 'dbadminslave'@'localhost' IDENTIFIED BY 'Password';
-GRANT ALL PRIVILEGES ON slave.* TO 'dbadmin'@'localhost';
-FLUSH PRIVILEGES;
-MYSQL_SCRIPT
+cd ./team-3-withu/scripts
+cp .my.cnf ~/
 
 if [ $? = 0 ]
 then
-  echo "mysql database created"
+  echo "copy of .my.cnf completed successfully"
 else
-  echo "creating mysql database did NOT complete"
+  echo "copying .my.cnf did NOT complete"
 fi
 
+cd ../Database
+mysql -u root -pPassword < createdata.sql
+
+if [ $? = 0 ]
+then
+  echo "database created successfully"
+else
+  echo "database did NOT create"
+fi
 
 exit 0
