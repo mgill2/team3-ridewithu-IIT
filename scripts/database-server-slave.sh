@@ -47,8 +47,8 @@ else
 fi
 
 #adding the sql server
-echo "mysql-server mysql-server/root_password password Password" | sudo debconf-set-selections 
-echo "mysql-server mysql-server/root_password_again password Password" | sudo debconf-set-selections
+echo "mysql-server mysql-server/root_password password Script67" | sudo debconf-set-selections 
+echo "mysql-server mysql-server/root_password_again password Script67" | sudo debconf-set-selections
 sudo apt-get -y install mysql-server
 if [ $? = 0 ]
 then
@@ -57,45 +57,41 @@ else
   echo "mysql install did NOT complete"
 fi
 
-#changing the address to webserver address
-sed -i 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
+
+git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
 if [ $? = 0 ]
 then
-  echo "sed updated the my.cnf file"
+  echo "added git hub repo successfully"
 else
-  echo "sed did NOT complete"
+  echo "github clone did NOT complete"
 fi
 
-#reloading mysql so that it takes the new ip
-sudo service mysql reload
+sudo git pull
 if [ $? = 0 ]
 then
-  echo "mysql reload completed"
+  echo "git pull executed successfully"
 else
-  echo "mysql did NOT complete"
+  echo "git pull did NOT complete"
 fi
 
+cd ./team-3-withu/scripts
+cp .my.cnf ~/
 
-mysql -u root <<MYSQL_SCRIPT
+if [ $? = 0 ]
+then
+  echo "copy of .my.cnf completed successfully"
+else
+  echo "copying .my.cnf did NOT complete"
+fi
 
-CREATE DATABASE IF NOT EXISTS slave;
+cd ../Database
+mysql -u root < createdata.sql
 
-USE slave;
-
-CREATE TABLE IF NOT EXISTS items
-(
-	ID MEDIUMINT NOT NULL AUTO_INCREMENT,
-	FIRST_NAME varchar(100)   NOT NULL,
-	LAST_NAME varchar(100)    NOT NULL,
-	EMAIL varchar(100)        NOT NULL,
-    PRIMARY KEY (ID)
-);
-CREATE USER 'dbadminslave'@'localhost' IDENTIFIED BY '$PASS';
-GRANT ALL PRIVILEGES ON master.* TO 'dbadmin'@'localhost';
-FLUSH PRIVILEGES;
-MYSQL_SCRIPT
-
-echo "Created table and user dbadmin"
-
+if [ $? = 0 ]
+then
+  echo "database created successfully"
+else
+  echo "database did NOT create"
+fi
 
 exit 0

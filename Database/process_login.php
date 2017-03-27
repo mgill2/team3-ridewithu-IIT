@@ -10,12 +10,14 @@
 
   	if(login($email, $password, $mysqli) == true) {
   		//login success
-  		header('Location: ../welcome.html');
+  		header('Location: ../welcome.php');
   	}
   	else {
-  		header('Location: ../index.html?error=1');
+  		header('Location: ../index.php?error=1');
   	}
   }
   else {
   	echo 'Invalid credentials';
   }
+
+?>

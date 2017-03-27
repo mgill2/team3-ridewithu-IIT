@@ -1,11 +1,15 @@
-#going to the directory for database
-#run powershell as admin need to set-execution policy to unresricted to run this script then after
-# you run the script and are done make sure to set-execution policy to restricted
+#going to the directory for database / webserver
+#run powershell as admin need to set-execution policy to unresricted to run this script 
+#then after you run the script and are done make sure to set-execution policy to #restricted for security
 
+#cd to the build directory
 cd "../build"
 
+#asking the user to name the boxes
+$name=read-host "Please name the box of the database server. Example: database-server"
+
 #running add box command
-vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name database-server
+vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name $name
 
 #getting box up and running
 cd "./database"
@@ -15,8 +19,11 @@ vagrant.exe up
 #changing directories to build
 cd "../"
 
+#asking the user to name the boxes
+$name2=read-host "Please name the box of the webserver. Example: webserver2"
+
 #adding webserver box to box list
-vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name webserver2
+vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $name2
 
 #getting box up and running
 cd "./webserver"

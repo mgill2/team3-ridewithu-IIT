@@ -3,6 +3,8 @@
 
   function start_session() {
     $session_name = 'sec_session_id';
+    session_name($session_name);
+
     $secure = true; 
     $httponly = true;
 
@@ -11,6 +13,7 @@
       exit();
     }
 
+    $cookieParams = session_get_cookie_params();
    session_set_cookie_params($cookieParams["lifetime"],
         $cookieParams["path"], 
         $cookieParams["domain"], 
@@ -41,7 +44,7 @@
             $user_id = preg_replace("/[^0-9]+/", "", $user_id);
             $_SESSION['user_id'] = $user_id;
             //protection
-            $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $username);
+            $username = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $member_username);
             $_SESSION['username'] = $username;
             $_SESSION['credentials'] = hash('sha512', $member_password . $user_browser);
             return true; //login successful                 
