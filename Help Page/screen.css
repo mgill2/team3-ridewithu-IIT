@@ -1,0 +1,374 @@
+/*
+==========================================================================
+CSS RESET START
+==========================================================================
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+	display: block;
+}
+html {
+	line-height: 1;
+}
+body {
+  line-height: inherit;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*
+==========================================================================
+CSS RESET END
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+GLOBAL STYLES START 
+
+These are styles that are used on most or all pages
+==========================================================================
+*/
+
+/*csslint box-sizing: false*/
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+body {
+  max-width: 96em;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Droid Sans', sans-serif;
+  line-height: 1.6;
+}
+
+body > header {
+  text-align: center;
+}
+
+main {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+   font-size: 1.5em;
+   text-align: center;
+}
+
+h4 {
+   font-size: 1em;
+   text-align: center;
+}
+}
+
+h5 {
+   font-size: 3.5em;
+
+
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.container {
+  max-width: 95%;
+  margin: 1em auto;
+}
+
+.banner {
+  height: 6.313em;
+  overflow: hidden;
+  text-align: left;
+  background: url(../img/headerExtender.gif);
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.banner img {
+  width: auto;
+  height: 6.313em;
+}
+
+.navbar {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  text-align: center;
+
+  color: #fff;
+  background-color: #dc002a;
+}
+
+.navbar .nav {
+  font-weight: bold;
+
+  flex: 1;
+}
+
+.navbar .nav a {
+  display: block;
+
+  padding: 0.5em;
+
+  transition: .3s background-color;
+  text-decoration: none;
+
+  color: #fff;
+}
+
+.navbar .nav a:hover,
+.navbar .nav a:active,
+.navbar .nav.active a {
+  background-color: #eee;
+  color: #222;
+}
+
+.nav-logo {
+  margin: 0 1em;
+  height: 2em;
+  width: 1.5em;
+
+  background-image: url(../img/navbutton.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.globalFooter {
+  text-align: right;
+  padding-top: 3em;
+  font-size: 1.5em;
+  color: #444;
+  line-height: 0.5em;
+}
+/*
+==========================================================================
+GLOBAL STYLES END
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+INDEX-SPECIFIC STYLES START
+==========================================================================
+*/
+
+.login {
+  position: absolute;
+
+  box-sizing: border-box;
+  min-width: 100%;
+  min-height: 100%;
+
+  border: 1em solid #dc002a; /* Hawk Red */
+}
+
+.login .page-greeting {
+  font-size: 3em;
+}
+
+.login > main {
+  text-align: center;
+}
+
+.login form {
+  margin-top: 2em;
+}
+
+.login input {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 50%;
+  padding: 1ex;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  margin-bottom: 2em;
+  padding-left: 3em;
+
+  border: none;
+  border-bottom: thin solid black;
+
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.login input[type="text"] {
+  background-image: url(../img/user.svg);
+}
+
+.login input[type="password"] {
+  background-image: url(../img/key.svg);
+}
+
+.login input[type="submit"]:hover {
+  color: grey;
+}
+
+.login input[type="submit"] {
+  margin-bottom: 1em;
+}
+
+.login label {
+  display: none;
+}
+
+.login .logo {
+  width: 20vh;
+  height: auto;
+}
+
+.login .security {
+  text-align: center;
+  margin-left: 25%;
+  max-width: 50%;
+}
+
+.login .security img {
+  width: auto;
+  height: 1em;
+}
+
+/*
+==========================================================================
+INDEX-SPECIFIC STYLES END
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+WELCOME-SPECIFIC STYLES START
+==========================================================================
+*/
+.greeting {
+  margin: 1em 0;
+
+  font-weight: bold;
+  font-style: italic;
+}
+
+.news {
+  display: block;
+  text-align: center;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+}
+
+.news header h3 {
+	border-style: solid;
+	text-align: center;
+	color: #fff;
+	background-color: #dc002a;
+}
+
+#map {
+   height: 400px; /* 400px / 16 =  25em */
+   width: 100%;
+}
+/*
+==========================================================================
+WELCOME-SPECIFIC STYLES END
+==========================================================================
+*/
+
+
+/*
+==========================================================================
+MEDIA QUERIES START
+==========================================================================
+*/
+@media screen and (min-width: 72em) {
+  .course-lookup-page .container {
+    display: flex;
+  }
+  .course-lookup-page main {
+    flex: 70;
+    margin-right: 1em;
+  }
+  .course-lookup-page aside {
+    flex: 30;
+  }
+  #cart li .button {
+    width: 4em;
+  }
+}
+@media screen and (min-width: 48em) {
+  .navbar {
+    display: flex;
+  }
+
+  .calendar {
+    display: block;
+  }
+}
+@media screen and (min-width: 32em) {
+  #search-options {
+    display: flex;
+  }
+  .options {
+    flex: 1;
+  }
+}
+/*
+==========================================================================
+MEDIA QUERIES END
+==========================================================================
+*/
