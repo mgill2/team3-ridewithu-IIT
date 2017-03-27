@@ -66,6 +66,14 @@ else
   echo "github clone did NOT complete"
 fi
 
+sudo git pull
+if [ $? = 0 ]
+then
+  echo "git pull executed successfully"
+else
+  echo "git pull did NOT complete"
+fi
+
 cd ./team-3-withu/scripts
 cp .my.cnf ~/
 
