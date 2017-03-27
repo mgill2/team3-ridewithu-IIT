@@ -47,8 +47,8 @@ else
 fi
 
 #adding the sql server
-echo "mysql-server mysql-server/root_password password Password" | sudo debconf-set-selections 
-echo "mysql-server mysql-server/root_password_again password Password" | sudo debconf-set-selections
+echo "mysql-server mysql-server/root_password password Script67" | sudo debconf-set-selections 
+echo "mysql-server mysql-server/root_password_again password Script67" | sudo debconf-set-selections
 sudo apt-get -y install mysql-server
 if [ $? = 0 ]
 then
@@ -66,6 +66,14 @@ else
   echo "github clone did NOT complete"
 fi
 
+sudo git pull
+if [ $? = 0 ]
+then
+  echo "git pull executed successfully"
+else
+  echo "git pull did NOT complete"
+fi
+
 cd ./team-3-withu/scripts
 cp .my.cnf ~/
 
@@ -77,7 +85,7 @@ else
 fi
 
 cd ../Database
-mysql -u root -pPassword < createdata.sql
+mysql -u root < createdata.sql
 
 if [ $? = 0 ]
 then
