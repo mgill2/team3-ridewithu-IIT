@@ -123,7 +123,7 @@ table {
   height: 6.313em;
 }
 
-/* .navbar {
+.navbar {
   min-width: 100%;
   margin: 0;
   padding: 0;
@@ -159,7 +159,7 @@ table {
   background-color: #eee;
   color: #222;
 }
-*/
+
 
 .sidenavbar {
     height: 100%;
@@ -377,10 +377,10 @@ MEDIA QUERIES START
   }
 }
 @media screen and (min-width: 48em) {
-  /*.navbar {
+  .navbar {
     display: flex;
   }
-*/
+
   .calendar {
     display: block;
   }
@@ -393,6 +393,7 @@ MEDIA QUERIES START
     flex: 1;
   }
 }
+
 /*
 ==========================================================================
 MEDIA QUERIES END
