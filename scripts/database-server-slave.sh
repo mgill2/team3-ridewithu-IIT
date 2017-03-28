@@ -66,6 +66,7 @@ else
   echo "github clone did NOT complete"
 fi
 
+cd team-3-withu
 sudo git pull
 if [ $? = 0 ]
 then
@@ -74,7 +75,7 @@ else
   echo "git pull did NOT complete"
 fi
 
-cd ./team-3-withu/scripts
+cd ./scripts
 cp .my.cnf ~/
 
 if [ $? = 0 ]
@@ -93,5 +94,15 @@ then
 else
   echo "database did NOT create"
 fi
+
+sed '87/1/2/s' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed the server number to 2 completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#sed 's/
 
 exit 0
