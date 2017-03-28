@@ -66,6 +66,15 @@ else
   echo "github clone did NOT complete"
 fi
 
+cd team-3-withu
+sudo git pull
+if [ $? = 0 ]
+then
+  echo "git pulled completed successfully"
+else
+  echo "git pull did not complete successfully"
+fi
+
 #removes the default page and adds our webpages, css, and js
 sudo rm /var/www/html/index.html
 if [ $? = 0 ]
@@ -75,7 +84,6 @@ else
   echo "remove did NOT complete"
 fi
 
-cd team-3-withu
 sudo cp -r index.html welcome.html js form.html forumcss.css img php screen.css /var/www/html
 if [ $? = 0 ]
 then
