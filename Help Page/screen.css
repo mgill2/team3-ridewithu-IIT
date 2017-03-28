@@ -99,6 +99,23 @@ h2 {
   font-size: 1.5em;
 }
 
+h3 {
+   font-size: 1.5em;
+   text-align: center;
+}
+
+h4 {
+   font-size: 1em;
+   text-align: center;
+}
+}
+
+h5 {
+   font-size: 3.5em;
+
+
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -151,49 +168,6 @@ table {
   text-decoration: none;
 
   color: #fff;
-}
-
-.navbar .nav a:hover,
-.navbar .nav a:active,
-.navbar .nav.active a {
-  background-color: #eee;
-  color: #222;
-}
-
-
-.sidenavbar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: hsl(0, 100%, 70%);
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenavbar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;;
-    display: block;
-    transition: 0.3s
-}
-
-.sidenavbar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#mainnavbar {
-    transition: margin-left .5s;
-    padding: 16px;
 }
 
 .navbar .nav a:hover,
@@ -284,11 +258,11 @@ INDEX-SPECIFIC STYLES START
   background-image: url(../img/key.svg);
 }
 
-.login input[type="button"]:hover {
+.login input[type="submit"]:hover {
   color: grey;
 }
 
-.login input[type="button"] {
+.login input[type="submit"] {
   margin-bottom: 1em;
 }
 
@@ -393,7 +367,6 @@ MEDIA QUERIES START
     flex: 1;
   }
 }
-
 /*
 ==========================================================================
 MEDIA QUERIES END
