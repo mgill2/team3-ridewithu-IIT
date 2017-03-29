@@ -23,5 +23,7 @@
 if(isset($_POST) && !empty($_POST)) {
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  $sql = "SELECT * FROM 'items' WHERE USERNAME='$username' AND PASSWORD='$password'";
 }
 ?>
