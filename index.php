@@ -10,7 +10,7 @@ if (login_users_only($mysqli) == true) {
 else {
   $logged = 'out';
 } */
-require_once('connectdatabase.php');
+require_once('Database/connectdatabase.php');
 ?>
 
 <!DOCTYPE html>
