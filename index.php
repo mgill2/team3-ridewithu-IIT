@@ -1,5 +1,5 @@
 <?php
-include_once 'Database/connectdatabase.php';
+/*include_once 'Database/connectdatabase.php';
 include_once 'Database/functions.php';
 
 start_session();
@@ -9,7 +9,8 @@ if (login_users_only($mysqli) == true) {
 }
 else {
   $logged = 'out';
-}
+} */
+require_once 'connectdatabase.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +44,7 @@ else {
         <input type="text" placeholder="Username" id="email" name="email" title="IIT username" required>
         <input type="password" placeholder="Password" name="password" id="password" title="Password must be 8 or more characters" required>
        <!--name="password"-->
-        <input type="button" id="loginBtn" name="loginBtn" value="Login" onclick="formhash(this.form, this.form.password);" />
+        <input type="submit" id="submit" name="submit" value="Login" />
 
         <div class="security">
           <p>
