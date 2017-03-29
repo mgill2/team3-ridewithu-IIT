@@ -74,7 +74,7 @@ For Windows Users (see further below)
 >
 >vagrant ssh
 
-###For Windows Users
+### For Windows Users
 >
 >packer build --force ubuntu14045-vanilla-database.json
 >packer build --force ubuntu14045-vanilla-database.json
