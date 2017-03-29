@@ -20,6 +20,13 @@ In the build folder make sure to have database
 and webserver folders. ADD IF NEEDED! BEFORE 
 RUNNING ANYTHING
 
+If not running local host changed the IP in
+the sed commands in the database and 
+database-slave scripts.
+
+also you need to change the vagrant file
+for the ips that you need
+
 ================================================
 
 For scripting: Need to know
