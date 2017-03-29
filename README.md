@@ -55,7 +55,7 @@ cd scripts
 >
 >then open another terminal and go to the build directory and then database and do 
 >vagrant ssh
-
+>
 >Or you can do it MANUALLY
 >
 >go into database folder (add one if you do not have one in build)
@@ -118,5 +118,14 @@ cd scripts
 >
 >after that you have everything ready to go
 
- 
-
+### After Webserver and Database are Set Up
+>Change direcctory to database and do vim Vagrantfile
+>
+>In Vagrantfile, add find this line config.vm.network "public_network"
+>
+>Add your Database server ip to this line
+>
+>config.vm.network "public_network", ip: "yourIPGoesHere"
+>
+>Then do vagrant reload --provision
+>
