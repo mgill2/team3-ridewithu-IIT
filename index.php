@@ -45,7 +45,7 @@ require_once('Database/connectdatabase.php');
         <input type="password" placeholder="Password" name="password" id="password" title="Password must be 8 or more characters" required>
        <!--name="password"-->
         <input type="submit" id="submit" name="submit" value="Login" />
-
+ 
         <div class="security">
           <p>
             <img src="img/secure.svg" alt="Lock" />
