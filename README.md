@@ -22,7 +22,7 @@ RUNNING ANYTHING
 
 ================================================
 
-###For scripting: Need to know
+### For scripting: Need to know
 
 All the users first clone this directory:
 https://github.com/illinoistech-itm/team-3-withu.git
@@ -33,7 +33,7 @@ Now go to scripts directory
 
 cd scripts
 
-##FOR MAC USERS run:
+### FOR MAC USERS run:
 >
 >packer build --force ubuntu14045-vanilla-database.json
 >
