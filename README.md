@@ -17,7 +17,8 @@ The other .my.cnf is in the scripts directory
 which is for the slave database.
 
 In the build folder make sure to have database
-and webserver folders. ADD IF NEEDED!
+and webserver folders. ADD IF NEEDED! BEFORE 
+RUNNING ANYTHING
 
 ================================================
 
