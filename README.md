@@ -74,49 +74,49 @@ For Windows Users (see further below)
 >
 >vagrant ssh
 
-For Windows Users
-
-packer build --force ubuntu14045-vanilla-database.json
-packer build --force ubuntu14045-vanilla-database.json
-
-For running the script vagrant-setup.ps1 (this skips the steps of removing boxes, vagrant init, and vagrant up)
-
-open up powershell as administrator 
-
-You have to run Set-ExecutionpPolicy while in an Administrator Shell
-
-Set that to unrestricted
-
-Then Yes
-
-Assuming that users are in scripts directory
-
-run vagrant-setup.ps1
-
-After you are done running the script then change it back to restricted for security purposes
-
-cd up a directory and then go into the build cd into webserver and vagrant ssh
-then open another terminal and go to the build directory and then database and do vagrant ssh
-
-or if your doing it manually these steps
-
-go into database folder (create one if needed)
-
-vagrant init databaser-server (or the one you created)
-
-vagrant up
-
-vagrant ssh
-
-go to webserver folder (create one if needed)
-
-vagrant init webserver2 (or the one you created)
-
-vagrant up 
-
-vagrant ssh
-
-after that you have everything ready to go
+###For Windows Users
+>
+>packer build --force ubuntu14045-vanilla-database.json
+>packer build --force ubuntu14045-vanilla-database.json
+>
+>For running the script vagrant-setup.ps1 (this skips the steps of removing boxes, vagrant init, and vagrant up)
+>
+>open up powershell as administrator 
+>
+>You have to run Set-ExecutionpPolicy while in an Administrator Shell
+>
+>Set that to unrestricted
+>
+>Then Yes
+>
+>Assuming that users are in scripts directory
+>
+>run vagrant-setup.ps1
+>
+>After you are done running the script then change it back to restricted for security purposes
+>
+>cd up a directory and then go into the build cd into webserver and vagrant ssh
+>then open another terminal and go to the build directory and then database and do vagrant ssh
+>
+>or if your doing it manually these steps
+>
+>go into database folder (create one if needed)
+>
+>vagrant init databaser-server (or the one you created)
+>
+>vagrant up
+>
+>vagrant ssh
+>
+>go to webserver folder (create one if needed)
+>
+>vagrant init webserver2 (or the one you created)
+>
+>vagrant up 
+>
+>vagrant ssh
+>
+>after that you have everything ready to go
 
  
 
