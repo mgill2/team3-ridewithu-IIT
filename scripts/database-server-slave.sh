@@ -86,34 +86,34 @@ else
 fi
 
 cd ../Database
-mysql -u root < createdata.sql
+mysql -u root < createdata-slave.sql
 
 if [ $? = 0 ]
 then
-  echo "database created successfully"
+  echo "database slave created successfully"
 else
-  echo "database did NOT create"
+  echo "database slave did NOT create"
 fi
 
-mysql -u root < insertdata.sql
-if [ $? = 0 ]
-then
-  echo "inserted created successfully"
-else
-  echo "insert data did NOT create"
-fi
+#mysql -u root < insertdata.sql
+#if [ $? = 0 ]
+#then
+#  echo "inserted created successfully"
+#else
+#  echo "insert data did NOT create"
+#fi
 
-mysql -u root < createuser-slave.sql
+#mysql -u root < createuser-slave.sql
 
-if [ $? = 0 ]
-then
-  echo "inserted created successfully"
-else
-  echo "insert data did NOT create"
-fi
+#if [ $? = 0 ]
+#then
+#  echo "created slave user successfully"
+#else
+#  echo "creating slave user did NOT create"
+#fi
 
 changing the address to database master address
-sed -i 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
+sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
