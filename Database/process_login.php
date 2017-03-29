@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once('connectdatabase.php');
   /*include_once 'functions.php';
 
@@ -27,5 +28,13 @@ if(isset($_POST) && !empty($_POST)) {
   $sql = "SELECT * FROM items WHERE USERNAME='$username' AND PASSWORD='$password'";
   $result = mysqli_query($connection, $sql);
   echo $count = mysqli_num_rows($result);
+
+  if($count == 1) {
+    $_SESSION['username']=$username;
+    header('Location: ../welcome.php');
+  }
+  else {
+    header('Location: ../index.php');
+  }
 }
 ?>
