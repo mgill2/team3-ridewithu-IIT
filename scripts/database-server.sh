@@ -47,8 +47,8 @@ else
 fi
 
 #adding the sql server
-echo "mysql-server mysql-server/root_password password Password" | sudo debconf-set-selections 
-echo "mysql-server mysql-server/root_password_again password Password" | sudo debconf-set-selections
+echo "mysql-server mysql-server/root_password password Master67" | sudo debconf-set-selections 
+echo "mysql-server mysql-server/root_password_again password Master67" | sudo debconf-set-selections
 sudo apt-get -y install mysql-server
 if [ $? = 0 ]
 then
@@ -58,21 +58,57 @@ else
 fi
 
 #changing the address to webserver address
-sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
-if [ $? = 0 ]
-then
-  echo "sed updated the my.cnf file"
-else
-  echo "sed did NOT complete"
-fi
+#sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+#if [ $? = 0 ]
+#then
+#  echo "sed updated the my.cnf file"
+#else
+#  echo "sed did NOT complete"
+#fi
 
 #reloading mysql so that it takes the new ip
-sudo service mysql restart
+#sudo /etc/init.d/mysql restart
+#if [ $? = 0 ]
+#then
+#  echo "mysql reload completed"
+#else
+#  echo "mysql did NOT complete"
+#fi
+
+git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
 if [ $? = 0 ]
 then
-  echo "mysql reload completed"
+  echo "added git hub repo successfully"
 else
-  echo "mysql did NOT complete"
+  echo "github clone did NOT complete"
+fi
+
+cd team-3-withu
+sudo git pull
+if [ $? = 0 ]
+then
+  echo "git pull executed successfully"
+else
+  echo "git pull did NOT complete"
+fi
+
+cd ./Database
+cp .my.cnf ~/
+
+if [ $? = 0 ]
+then
+  echo "copy of .my.cnf completed successfully"
+else
+  echo "copying .my.cnf did NOT complete"
+fi
+
+mysql -u root < createdata.sql
+
+if [ $? = 0 ]
+then
+  echo "database created successfully"
+else
+  echo "database did NOT create"
 fi
 
 exit 0

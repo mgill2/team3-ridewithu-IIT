@@ -8,6 +8,19 @@ Matt- *Operations*
 Paul- *UI Design* 
 Alejandro- *Security*
 
+==============Some Notes========================
+
+The .my.cnf for the master database is in the 
+Database folder.
+
+The other .my.cnf is in the scripts directory
+which is for the slave database.
+
+In the build folder make sure to have database
+and webserver folders. ADD IF NEEDED! BEFORE 
+RUNNING ANYTHING
+
+================================================
 
 For scripting: Need to know
 
@@ -26,8 +39,8 @@ packer build --force ubuntu14045-vanilla-database.json
 
 packer build --force ubuntu14045-vanilla-webserver.json
 
-then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or vagrant ssh (work in progress))
-For Mac/Linux Users (if you going to run the a script run macusers.sh this is becuase there is a powershell script for this but we also made one for mac/linux users to run vagrant init and up)
+then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or if you want to do the steps manually see below)
+For Windows Users (see further below)
 
 if you dont feel comforatable doing the script do this
 
@@ -43,7 +56,7 @@ vagrant ssh
 then open another terminal and go to the build directory and then database and do 
 vagrant ssh
 
-Or you can do it manually
+Or you can do it MANUALLY
 
 go into database folder (add one if you do not have one in build)
 
@@ -66,7 +79,9 @@ For Windows Users
 packer build --force ubuntu14045-vanilla-database.json
 packer build --force ubuntu14045-vanilla-database.json
 
-For running the script vagrant-setup.ps1
+For running the script vagrant-setup.ps1 (this skips the steps of removing boxes, vagrant init, and vagrant up)
+
+open up powershell as administrator 
 
 You have to run Set-ExecutionpPolicy while in an Administrator Shell
 
@@ -85,17 +100,17 @@ then open another terminal and go to the build directory and then database and d
 
 or if your doing it manually these steps
 
-go into database folder
+go into database folder (create one if needed)
 
-vagrant init databaser-server
+vagrant init databaser-server (or the one you created)
 
 vagrant up
 
 vagrant ssh
 
-go to webserver folder 
+go to webserver folder (create one if needed)
 
-vagrant init webserver2
+vagrant init webserver2 (or the one you created)
 
 vagrant up 
 
