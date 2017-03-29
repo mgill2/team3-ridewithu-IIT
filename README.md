@@ -22,7 +22,7 @@ RUNNING ANYTHING
 
 ================================================
 
-For scripting: Need to know
+#For scripting: Need to know
 
 All the users first clone this directory:
 https://github.com/illinoistech-itm/team-3-withu.git
@@ -33,46 +33,46 @@ Now go to scripts directory
 
 cd scripts
 
-FOR MAC USERS run:
-
-packer build --force ubuntu14045-vanilla-database.json
-
-packer build --force ubuntu14045-vanilla-webserver.json
-
-then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or if you want to do the steps manually see below)
+> ##FOR MAC USERS run:
+>
+>packer build --force ubuntu14045-vanilla-database.json
+>
+>packer build --force ubuntu14045-vanilla-webserver.json
+>
+>then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or if you want to do the steps manually see below)
 For Windows Users (see further below)
+>
+>if you dont feel comforatable doing the script do this
 
-if you dont feel comforatable doing the script do this
+>go to the /team-3-withu/build
+>
+>vagrant box add ubuntu14045-vanilla-database.box --name database-server
+>
+>vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
+>
+>cd up a directory and then go into the build cd into webserver (if you do not have a folder create one) then
+>vagrant ssh
+>
+>then open another terminal and go to the build directory and then database and do 
+>vagrant ssh
 
-go to the /team-3-withu/build
-
-vagrant box add ubuntu14045-vanilla-database.box --name database-server
-
-vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
-
-cd up a directory and then go into the build cd into webserver (if you do not have a folder create one) then
-vagrant ssh
-
-then open another terminal and go to the build directory and then database and do 
-vagrant ssh
-
-Or you can do it MANUALLY
-
-go into database folder (add one if you do not have one in build)
-
-vagrant init databaser-server
-
-vagrant up
-
-vagrant ssh
-
-go to webserver folder (add one if you do not have one in build) 
-
-vagrant init webserver2
-
-vagrant up 
-
-vagrant ssh
+>Or you can do it MANUALLY
+>
+>go into database folder (add one if you do not have one in build)
+>
+>vagrant init databaser-server
+>
+>vagrant up
+>
+>vagrant ssh
+>
+>go to webserver folder (add one if you do not have one in build) 
+>
+>vagrant init webserver2
+>
+>vagrant up 
+>
+>vagrant ssh
 
 For Windows Users
 
