@@ -40,10 +40,10 @@ cd scripts
 >packer build --force ubuntu14045-vanilla-webserver.json
 >
 >then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or if you want to do the steps manually see below)
-For Windows Users (see further below)
+>For Windows Users (see further below)
 >
 >if you dont feel comforatable doing the script do this
-
+>
 >go to the /team-3-withu/build
 >
 >vagrant box add ubuntu14045-vanilla-database.box --name database-server
