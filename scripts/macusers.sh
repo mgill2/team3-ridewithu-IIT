@@ -6,6 +6,14 @@
 #changing directory
 cd "../build"
 
+#showing the previous boxes
+vagrant box list
+while [ $awnser = "y" ] || [ $awnser = "Y" ];
+do
+  vagrant box list
+  echo "Would you like to remove any boxes? (y/n)"
+  read awnser
+done
 #adding database boxes
 echo "Please enter the name of your box you would like to create for the database. Example: database-server"
 read name
