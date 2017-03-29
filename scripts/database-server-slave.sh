@@ -95,6 +95,32 @@ else
   echo "database did NOT create"
 fi
 
+mysql -u root < insertdata.sql
+if [ $? = 0 ]
+then
+  echo "inserted created successfully"
+else
+  echo "insert data did NOT create"
+fi
+
+mysql -u root < createuser-slave.sql
+
+if [ $? = 0 ]
+then
+  echo "inserted created successfully"
+else
+  echo "insert data did NOT create"
+fi
+
+changing the address to database master address
+sed -i 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "sed updated the my.cnf file"
+else
+  echo "sed did NOT complete"
+fi
+
 sed '87/1/2/s' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
