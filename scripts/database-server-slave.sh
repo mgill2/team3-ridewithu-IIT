@@ -85,15 +85,15 @@ else
   echo "copying .my.cnf did NOT complete"
 fi
 
-cd ../Database
-mysql -u root < createdata-slave.sql
+#cd ../Database
+#mysql -u root < createdata-slave.sql
 
-if [ $? = 0 ]
-then
-  echo "database slave created successfully"
-else
-  echo "database slave did NOT create"
-fi
+#if [ $? = 0 ]
+#then
+#  echo "database slave created successfully"
+#else
+#  echo "database slave did NOT create"
+#fi
 
 #mysql -u root < insertdata.sql
 #if [ $? = 0 ]
@@ -112,8 +112,8 @@ fi
 #  echo "creating slave user did NOT create"
 #fi
 
-changing the address to database master address
-sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+#changing the address to database master address
+sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
@@ -121,7 +121,7 @@ else
   echo "sed did NOT complete"
 fi
 
-sed '87/1/2/s' /etc/mysql/my.cnf
+sed '87/1/2' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed the server number to 2 completed successfully"
