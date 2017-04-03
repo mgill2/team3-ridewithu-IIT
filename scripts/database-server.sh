@@ -58,7 +58,7 @@ else
 fi
 
 #changing the address to webserver address
-#sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+#sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 #if [ $? = 0 ]
 #then
 #  echo "sed updated the my.cnf file"
@@ -109,6 +109,24 @@ then
   echo "database created successfully"
 else
   echo "database did NOT create"
+fi
+
+mysql -u root < createuser.sql
+
+if [ $? = 0 ]
+then
+  echo "users created successfully"
+else
+  echo "users did NOT create"
+fi
+
+mysql -u root < insertdata.sql
+
+if [ $? = 0 ]
+then
+  echo "inserted data successfully"
+else
+  echo "insert data did NOT complete"
 fi
 
 exit 0
