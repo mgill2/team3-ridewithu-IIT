@@ -20,6 +20,13 @@ In the build folder make sure to have database
 and webserver folders. ADD IF NEEDED! BEFORE 
 RUNNING ANYTHING
 
+If not running local host changed the IP in
+the sed commands in the database and 
+database-slave scripts.
+
+also you need to change the vagrant file
+for the ips that you need
+
 ================================================
 
 ### For scripting: Need to know
@@ -77,7 +84,8 @@ cd scripts
 ### For Windows Users
 >
 >packer build --force ubuntu14045-vanilla-database.json
->packer build --force ubuntu14045-vanilla-database.json
+>packer build --force ubuntu14045-vanilla-webserver.json
+ packer build --force ubuntu14045-vanilla-database-slave.json
 >
 >For running the script vagrant-setup.ps1 (this skips the steps of removing boxes, vagrant init, and vagrant up)
 >
