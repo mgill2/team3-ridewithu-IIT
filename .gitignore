@@ -8,6 +8,7 @@
 *.box
 
 output-ubuntu-vanilla-14045*/
+build/
 
 # Packages #
 ############
