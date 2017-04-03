@@ -1,4 +1,4 @@
-USE slave;
+USE master;
 
 INSERT INTO items (ID, FIRST_NAME, LAST_NAME, EMAIL, USERNAME, PASSWORD) values 
 (0,"Dipen", "Delvadiya", "ddelvadi@hawk.iit.edu", "ddelvadi", "DipenDelvadiya"),
