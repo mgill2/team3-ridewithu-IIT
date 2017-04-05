@@ -361,82 +361,40 @@ WELCOME-SPECIFIC STYLES END
 REQUEST-SPECIFIC STYLES START
 ==========================================================================
 */
-.controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
 
-      #origin-input,
-      #destination-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 200px;
-      }
-
-      #origin-input:focus,
-      #destination-input:focus {
-        border-color: #4d90fe;
-      }
-
-      #button-to-submit {
-        margin-left: 10px;
-      }
-<<<<<<< HEAD
-=======
-/*
-==========================================================================
-WELCOME-SPECIFIC STYLES END
-==========================================================================
-*/
-
-/*
-==========================================================================
-REQUEST-SPECIFIC STYLES START
-==========================================================================
-*/
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-body {
-  max-width: 96em;
-  margin: 0 auto;
-  padding: 0;
-  font-family: 'Droid Sans', sans-serif;
-  line-height: 1.6;
-  text-align: center;
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-body > header {
-  text-align: center;
+#origin-input,
+#destination-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
 }
 
-main {
-  max-width: 90%;
-  margin: 0 auto;
+#origin-input:focus,
+#destination-input:focus {
+    border-color: #4d90fe;
 }
 
-header h1 {
-  font-size: 3em;
-  color: #fff;
-  text-align: center;
+#button-to-submit {
+    margin-left: 10px;
 }
-
-h2 {
-  font-size: 1.5em;
-  text-align: center;
-}
-
->>>>>>> ec8bb6c6b21926761874daed44eef4f55353fb4a
 
 /*
 ==========================================================================
