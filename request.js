@@ -21,6 +21,7 @@
         this.travelMode = 'DRIVING';
         var originInput = document.getElementById('origin-input');
         var destinationInput = document.getElementById('destination-input');
+        var submit_button = document.getElementById('button-to-submit');
         /*var modeSelector = document.getElementById('mode-selector');*/
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
@@ -40,6 +41,7 @@
 
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
         this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(submit_button);
         /*this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);*/
       }
 
@@ -86,9 +88,9 @@
         }, function(response, status) {
           if (status === 'OK') {
             me.directionsDisplay.setDirections(response);
-            var origin_addr = document.getElementById('origin-input').value;
+            origin_addr = document.getElementById('origin-input').value;
             //console.log(origin_addr);
-            var destination_addr = document.getElementById('destination-input').value;
+            destination_addr = document.getElementById('destination-input').value;
             //console.log(destination_addr);
             //var place_id = document.getElementById('origin-input');
           } else {
@@ -97,3 +99,42 @@
          });
 
       };
+
+      //var submit_button = document.getElementById('button-to-submit');
+
+      //submit_button.addEventListener('click', function() {
+      	    //console.log(origin_addr);
+     //function Redirect() {
+        //console.log(origin_addr);
+        //var data = "origin_address=" + origin_addr + "&destination_address=" + destination_addr;
+        //console.log(data);
+		   /*$.ajax({
+        	url: "Database/save-points.php",
+        	dataType: 'json',
+        	type: 'GET',
+        	data: {origin_address: origin_addr, destination_address: destination_addr},
+        	success: function(data)
+        	{                
+           //check here whether inserted or not 
+           alert(data.message);
+        	},
+
+          error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        }
+   		}); */
+      $("#button-to-submit").click(function() {
+        var request;
+        request = $.ajax ({
+        url: "Database/save-points.php",
+        datatype: 'json',
+        type: 'GET',
+        data: {origin_address: origin_addr, destination_address: destination_addr},
+        });
+        request.done(function(response, textStatus, jqXHR) { 
+          console.log("It works!!");
+          
+        })
+
+      });
+
