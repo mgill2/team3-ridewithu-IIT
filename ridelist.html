@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+    <title>Illinois Tech Ride Share - Ride Request</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="screen.css" />
+    <script type="text/php" src="php/database.php"></script>
+</head>
+
+<body class="index">
+	<header>
+      <div class="banner">
+        <a href="welcome.html">
+          <img src="img/IITScarletHawks.png" alt="IIT Logo">
+        </a>
+        <img src="img/IITRideShare.png" alt="Ride Share Logo">
+      </div>
+      <nav>
+      <div class="navwrapper">
+          <ul id="nav" class="navbar">
+            <li class="nav active"><a href="welcome.html">Home</a></li>
+            <li class="nav"><a href="request.html">Request Ride</a></li>
+            <li class="nav"><a href="listride.html">Ride List</a></li>
+            <li class="nav"><a href="https://iit.edu/news/iittoday/">IIT News</a></li>
+            <li class="nav"><a href="redirect.html">Help</a></li>
+            <li class="nav"><a href="index.html">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  <form method = "get" action ="#null">
+  <ol> 
+  <li id ="start">
+  <p><u>Starting Point</u><p>
+	<label for= "name">Insert Starting Point:</label>
+	<Input type = "text" name = "name" id = "name" pattern = "[A-Za-z] + (0-9)" placeholder = "i.e 123 Gregory Street"/>
+ 
+	<Input type="checkbox" name = "University" value = "def">
+	<label for = "checkbox" id = "IIT">Illinois Institute of Technology</label>
+
+  
+  <li id ="end">
+	<p><u>Destination desired</u><p>
+	<label for= "name">Insert Destination:</label>
+	<Input type = "text" name = "name" id = "name" pattern = "[A-Za-z] + (0-9)" placeholder = "i.e 123 Gregory Street"/>
+  
+	<Input type="checkbox" name = "University" value = "def">
+	<label for = "checkbox" id = "IIT">Illinois Institute of Technology</label>
+ 
+  
+  <li id ="date">
+	<p><u>Please choose the date desire for the Ride Share</u><p>
+	<label>Choosen date:</label>
+	<input type="date" name="cday">
+	
+	<Input type="checkbox" name = "Today" value = "def">
+	<label for = "checkbox">Today</label>
+
+  
+  <li id ="time">
+	<p><u>Please choose a time</u></p>
+	<label>Select a time:</label>
+	<input type="time" name="usr_time">
+  </li>
+  <ol>	
+	<input type="submit" value="Submit">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/site.js"></script>
+</body>
+  
+</html>
