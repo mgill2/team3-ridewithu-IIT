@@ -104,17 +104,37 @@
 
       //submit_button.addEventListener('click', function() {
       	    //console.log(origin_addr);
-     function Redirect() {
-		$.ajax({
+     //function Redirect() {
+        //console.log(origin_addr);
+        //var data = "origin_address=" + origin_addr + "&destination_address=" + destination_addr;
+        //console.log(data);
+		   /*$.ajax({
         	url: "Database/save-points.php",
         	dataType: 'json',
-        	type: 'POST',
-        	data:{ origin_address: origin_addr, destination_address: destination_addr },
+        	type: 'GET',
+        	data: {origin_address: origin_addr, destination_address: destination_addr},
         	success: function(data)
         	{                
            //check here whether inserted or not 
-        	}
-   		});
-   		window.location.href = "Database/save-points.php";
-	}
-     // }, false);
+           alert(data.message);
+        	},
+
+          error: function(jqXHR, textStatus, errorThrown) {
+          console.log(textStatus, errorThrown);
+        }
+   		}); */
+      $("#button-to-submit").click(function() {
+        var request;
+        request = $.ajax ({
+        url: "Database/save-points.php",
+        datatype: 'json',
+        type: 'GET',
+        data: {origin_address: origin_addr, destination_address: destination_addr},
+        });
+        request.done(function(response, textStatus, jqXHR) { 
+          console.log("It works!!");
+          
+        })
+
+      });
+
