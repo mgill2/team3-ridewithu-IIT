@@ -22,7 +22,7 @@
 ///////////////////////////////////////
 
 // Full Hostname of your CAS Server
-$cas_host = 'mytest107.iit.edu';
+$cas_host = 'mydev107.iit.edu';
 
 // Context of the CAS Server
 $cas_context = '/cas';
