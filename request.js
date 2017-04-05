@@ -87,10 +87,9 @@
           if (status === 'OK') {
             me.directionsDisplay.setDirections(response);
             var origin_addr = document.getElementById('origin-input').value;
-            console.log(origin_addr);
+            //console.log(origin_addr);
             var destination_addr = document.getElementById('destination-input').value;
-            console.log(destination_addr);
-            var geocoder = new google.maps.Geocoder;
+            //console.log(destination_addr);
             //var place_id = document.getElementById('origin-input');
           } else {
             window.alert('Directions request failed due to ' + status);
