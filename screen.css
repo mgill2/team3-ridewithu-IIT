@@ -392,6 +392,51 @@ REQUEST-SPECIFIC STYLES START
       #button-to-submit {
         margin-left: 10px;
       }
+<<<<<<< HEAD
+=======
+/*
+==========================================================================
+WELCOME-SPECIFIC STYLES END
+==========================================================================
+*/
+
+/*
+==========================================================================
+REQUEST-SPECIFIC STYLES START
+==========================================================================
+*/
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+body {
+  max-width: 96em;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Droid Sans', sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+
+body > header {
+  text-align: center;
+}
+
+main {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+>>>>>>> ec8bb6c6b21926761874daed44eef4f55353fb4a
 
 /*
 ==========================================================================

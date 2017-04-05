@@ -67,12 +67,12 @@ CSS RESET END
 ==========================================================================
 GLOBAL STYLES START 
 
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 These are styles that are used on most or all pages
 ==========================================================================
 */
 
 /*csslint box-sizing: false*/
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 body {
   max-width: 96em;
@@ -102,17 +102,20 @@ h2 {
 h3 {
    font-size: 1.5em;
    text-align: center;
+   
+
 }
 
 h4 {
    font-size: 1em;
    text-align: center;
-}
+   padding-bottom: 2.5em;
+
 }
 
 h5 {
-   font-size: 3.5em;
-
+  font-size: 1.2em;
+  padding-right:  2.0em;
 
 }
 
