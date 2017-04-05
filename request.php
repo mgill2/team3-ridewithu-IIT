@@ -25,22 +25,22 @@ phpCAS::forceAuthentication();
 <!DOCTYPE html>
 <html lang="en" class="nojs">
 <head>
-  	<title>Illinois Tech Ride Share - Welcome</title>
-  	<meta charset="utf-8" />
-  	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
-  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
-  	<link rel="stylesheet" href="screen.css" />
-  	<script type="text/php" src="php/database.php"></script>
+    <title>Illinois Tech Ride Share - Ride Request</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="screen.css" />
+    <script type="text/php" src="php/database.php"></script>
 </head>
 
 <body class="index">
-	<header>
+  <header>
       <div class="banner">
         <a href="welcome.html">
           <img src="img/IITScarletHawks.png" alt="IIT Logo">
         </a>
       </div>
-      <!-- <nav>
+      <nav>
       <div class="navwrapper">
           <ul id="nav" class="navbar">
             <li class="nav active"><a href="welcome.html">Home</a></li>
@@ -51,10 +51,10 @@ phpCAS::forceAuthentication();
             <li class="nav"><a href="index.html">Logout</a></li>
           </ul>
         </div>
-      </nav> -->
+      </nav>
     </header>
     
-    <div id="sidenavbar" class="sidenavbar">
+   <!-- <div id="sidenavbar" class="sidenavbar">
       <ul id="nav" class="navbar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <li class="nav active"><a href="welcome.html">Home</a></li>
@@ -64,51 +64,44 @@ phpCAS::forceAuthentication();
         <li class="nav"><a href="redirect.html">Help</a></li>
         <li class="nav"><a href="index.html">Logout</a></li>
       </ul>
-    </div>
+    </div> -->
 
     <div id="mainnavbar">
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
     </div>
     <main>
       <section class="greeting">
         Welcome, User!
       </section>
-      <section class="news">
-      <article>
-          <header>
-            <h3>IIT Events</h3>
-          </header>
-          <a href="http://web.iit.edu/university-calendar">View the University Calendar Here</a>
-          <div class="calendar">
-            <iframe src="https://www.google.com/calendar/embed?src=calendar%40iit.edu&amp;ctz=America/Chicago" frameborder="0" scrolling="no"></iframe>
-          </div>
-        </article>
-	  <article>
-          <header>
-            <h3>Public Safety</h3>
-          </header>
-          <h4>Emergency Phone Numbers</h4>
-          	  <p><strong>Main Campus</strong>: 312.808.6363</p>
-    		  <p><strong>Downtown Campus</strong>: 312.906.5030</p>
-    		  <p><strong>Moffett Campus</strong>: 708.563.8280</p>
-    		  <p><strong>Rice Campus</strong>: 630.682.6054</p>
-        </article>
-      </section>
-    </main>
-  <ul>
-    <?php if($uploadOn==1) : ?>
-      <li><a href="getride.php">Get Ride</a></li>
-    <?php endif; ?>
-  </ul>
+     </main>    
 
-  <div id="map"> </div>
+    <input id="origin-input" class="controls" type="text"
+        placeholder="Enter an origin location">
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script type="text/javascript" src="js/site.js"></script>
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap">
+    <input id="destination-input" class="controls" type="text"
+        placeholder="Enter a destination location">
+
+    <input id="button-to-submit" class="button-to-submit" type="button" value="submit">
+    <!--<div id="mode-selector" class="controls">
+      <input type="radio" name="type" id="changemode-walking" checked="checked">
+      <label for="changemode-walking">Walking</label>
+
+      <input type="radio" name="type" id="changemode-transit">
+      <label for="changemode-transit">Transit</label>
+
+      <input type="radio" name="type" id="changemode-driving">
+      <label for="changemode-driving">Driving</label>
+    </div> -->
+
+    <div id = "map"></div>
+
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/site.js"></script> -->
+    <script type="text/javascript" src="request.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6HYkswUWkVAfHAb4n33WiBocqk87GW3Y&libraries=places&callback=initMap"
+        async defer></script>
     </script>
     
   
