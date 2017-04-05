@@ -175,7 +175,7 @@ table {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: hsl(0, 100%, 70%);
+    background-color: #dc002a;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -415,7 +415,7 @@ MEDIA QUERIES START
   .banner img:nth-child(2) {
   width: auto;
   height: 6em;
-  padding-left: .25em;
+  padding-left: 5em;
   }
   
   .options {
