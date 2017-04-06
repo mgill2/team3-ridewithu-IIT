@@ -124,17 +124,26 @@
         }
    		}); */
       $("#button-to-submit").click(function() {
-        var request;
-        request = $.ajax ({
-        url: "Database/save-points.php",
-        datatype: 'json',
-        type: 'GET',
-        data: {origin_address: origin_addr, destination_address: destination_addr},
-        });
-        request.done(function(response, textStatus, jqXHR) { 
-          console.log("It works!!");
-          
-        })
+        //var request;
+        //request = $.ajax ({
+        //url: "Database/save-points.php",
+        //datatype: 'json',
+        //type: 'post',
+        //data: {origin_address: origin_addr, destination_address: destination_addr},
+        //});
+        //request.done(function(response, textStatus, jqXHR) { 
+          //console.log("It works!!");
+          //console.log(data);
+          //console.log(textStatus);
+        //})
+        //window.location.href = "Database/save-points.php";
+        console.log(destination_addr);
 
+        window.location.href="Database/save-points.php? origin_address=" + origin_addr + "&destination_address=" + destination_addr; 
+        
       });
 
+
+
+	//}
+     // }, false);
