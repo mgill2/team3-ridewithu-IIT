@@ -1,3 +1,4 @@
 <?php
-	echo $_POST['origin_address'];
+	$origin_address = $_GET['origin_address'];
+	echo $origin_address;
 ?>
