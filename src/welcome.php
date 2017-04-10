@@ -29,8 +29,8 @@ phpCAS::forceAuthentication();
   	<meta charset="utf-8" />
   	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
-  	<link rel="stylesheet" href="screen.css" />
-  	<script type="text/php" src="php/database.php"></script>
+  	<link rel="stylesheet" href="css/screen.css" />
+  	<script type="text/php" src="database.php"></script>
 </head>
 
 <body class="index">

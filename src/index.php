@@ -23,7 +23,7 @@ include '../CAS-Php-plugin-for-Test-CAS/CAS_Php/includes/CAS.php';
     <link rel="shortcut icon" href="img/myiit.gif">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
-    <link rel="stylesheet" href="screen.css" />
+    <link rel="stylesheet" href="css/screen.css" />
     <script type="text/JavaScript" src="js/sha512.js"></script>
     <script type="text/JavaScript" src="js/forms.js"></script>
   </head>
@@ -41,7 +41,7 @@ include '../CAS-Php-plugin-for-Test-CAS/CAS_Php/includes/CAS.php';
     <main>
       <img class="logo" src="img/IITScarletHawks.png" alt="IIT Logo">
       <!-- We would use POST but we want the login button to go to the index page -->
-      <form action="Database/process_login.php" method="post" name="login_form">
+      <form action="~/scripts/Database/process_login.php" method="post" name="login_form">
         <input type="text" placeholder="Username" id="username" name="username" title="IIT username" required>
         <input type="password" placeholder="Password" name="password" id="password" title="Password must be 8 or more characters" required>
        <!--name="password"-->
