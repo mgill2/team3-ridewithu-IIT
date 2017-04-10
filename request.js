@@ -88,14 +88,28 @@
 
       };
 
-      $("#button-to-submit").click(function() {
+$(document).ready( function() {
+$("#button-to-submit").click(function() {
 
-        console.log(destination_addr);
+  origin_addr = $("#origin-input").val(); 
+  destination_addr = $("#destination-input").val();
+  console.log(destination_addr);
 
-        //take users to PHP page when Submit is clicked
-        window.location.href="Database/save-points.php? origin_address=" + origin_addr + "&destination_address=" + destination_addr; 
-        
+            $.ajax({
+              type: "POST",
+              url: "Database/save-points.php",
+              data: { 
+                origin_address: origin_addr,
+                destination_address: destination_addr
+              },
+        success: function(html){
+          alert(html);
+          window.location.href = 'test-resp.php?';
+            }
+        });
+        return false;
       });
+});
 
 
 
