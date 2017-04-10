@@ -11,6 +11,7 @@ else {
   $logged = 'out';
 } */
 require_once('Database/connectdatabase.php');
+include CAS.php
 ?>
 
 <!DOCTYPE html>
