@@ -32,7 +32,9 @@ $cas_port = 443;
 
 // Path to the ca chain that issued the cas server certificate
 //Update the path to digicert
-$cas_server_ca_cert_path = 'DigiCertHighAssuranceCA-3.crt';
+$cas_server_ca_cert_path = 'team-3-withu/ssl/DigiCertHighAssuranceCA-3.crt';
+//CAS-Php-plugin-for-Test-CAS/CAS Php/includes/CAS/DigiCertHighAssuranceCA-3
+
 
 //////////////////////////////////////////
 // Advanced Config for special purposes //

@@ -1,3 +1,27 @@
+<?php
+
+// Load the settings from the central config file
+require_once 'includes/CAS/config.php';
+
+// Load the CAS lib
+require_once 'includes/CAS.php';
+
+// Initialize phpCAS
+phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
+
+// For production use set the CA certificate that is the issuer of the cert
+// on the CAS server and uncomment the line below
+phpCAS::setCasServerCACert($cas_server_ca_cert_path);
+
+// force CAS authentication
+phpCAS::forceAuthentication();
+
+// at this step, the user has been authenticated by the CAS server
+// and the user's login name can be read with phpCAS::getUser().
+
+// for this test, simply print that the authentication was successfull
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="nojs">
 <head>
@@ -5,8 +29,8 @@
   	<meta charset="utf-8" />
   	<meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
-  	<link rel="stylesheet" href="screen.css" />
-  	<script type="text/php" src="php/database.php"></script>
+  	<link rel="stylesheet" href="css/screen.css" />
+  	<script type="text/php" src="database.php"></script>
 </head>
 
 <body class="index">
