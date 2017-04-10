@@ -11,7 +11,7 @@ else {
   $logged = 'out';
 } */
 require_once('Database/connectdatabase.php');
-include 'CAS.php';
+include '../CAS-Php-plugin-for-Test-CAS/CAS_Php/includes/CAS.php';
 ?>
 
 <!DOCTYPE html>
