@@ -103,8 +103,8 @@ $("#button-to-submit").click(function() {
                 destination_address: destination_addr
               },
         success: function(html){
-          alert(html);
-          window.location.href = 'test-resp.php?';
+          //alert(html);
+          window.location.href = 'listride.php?';
             }
         });
         return false;
