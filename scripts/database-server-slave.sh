@@ -87,7 +87,7 @@ else
 fi
 
 #running the sql script to create the database
-cd ../Database
+cd ./Database
 mysql -u root < createdata-slave.sql
 
 if [ $? = 0 ]
