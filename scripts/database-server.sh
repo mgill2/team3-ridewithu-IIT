@@ -92,7 +92,7 @@ else
   echo "git pull did NOT complete"
 fi
 
-cd ./Database
+cd ./scripts/Database
 cp .my.cnf ~/
 
 if [ $? = 0 ]
