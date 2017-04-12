@@ -84,6 +84,14 @@ else
   echo "remove did NOT complete"
 fi
 
+cd ./src
+if [ $? = 0 ]
+then
+  echo "cd into the src folder successfully"
+else
+  echo "cd did NOT complete"
+fi
+
 sudo cp -r index.html welcome.html js form.html forumcss.css img php screen.css /var/www/html
 if [ $? = 0 ]
 then

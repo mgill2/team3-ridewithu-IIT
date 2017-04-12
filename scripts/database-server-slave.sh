@@ -19,7 +19,6 @@ echo "All Done!"
 #adding elements to the database server
 
 #changing host and hostname
-#sed 's/pleasechangeme/database/' /etc/hosts
 sed 's/pleasechangeme/database-slave/' /etc/hostname
 if [ $? = 0 ]
 then
@@ -57,7 +56,7 @@ else
   echo "mysql install did NOT complete"
 fi
 
-
+#adding git and using a token to clone for authentication
 git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
 if [ $? = 0 ]
 then
@@ -66,6 +65,7 @@ else
   echo "github clone did NOT complete"
 fi
 
+#git pulling in case of updates
 cd team-3-withu
 sudo git pull
 if [ $? = 0 ]
@@ -75,6 +75,7 @@ else
   echo "git pull did NOT complete"
 fi
 
+#coping the .my.cnf file for mysql to run without password prompt
 cd ./scripts
 cp .my.cnf ~/
 
@@ -85,35 +86,19 @@ else
   echo "copying .my.cnf did NOT complete"
 fi
 
-#cd ../Database
-#mysql -u root < createdata-slave.sql
+#running the sql script to create the database
+cd ./Database
+mysql -u root < createdata-slave.sql
 
-#if [ $? = 0 ]
-#then
-#  echo "database slave created successfully"
-#else
-#  echo "database slave did NOT create"
-#fi
-
-#mysql -u root < insertdata.sql
-#if [ $? = 0 ]
-#then
-#  echo "inserted created successfully"
-#else
-#  echo "insert data did NOT create"
-#fi
-
-#mysql -u root < createuser-slave.sql
-
-#if [ $? = 0 ]
-#then
-#  echo "created slave user successfully"
-#else
-#  echo "creating slave user did NOT create"
-#fi
+if [ $? = 0 ]
+then
+  echo "database slave created successfully"
+else
+  echo "database slave did NOT create"
+fi
 
 #changing the address to database master address
-sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+sudo sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
@@ -121,7 +106,8 @@ else
   echo "sed did NOT complete"
 fi
 
-sed '87/1/2' /etc/mysql/my.cnf
+#changing the server number so that the mysql slave can reach the master for #replication
+sudo sed 's/#server-id = 1/server-id = 2/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed the server number to 2 completed successfully"
@@ -129,6 +115,5 @@ else
   echo "changing server number did NOT complete"
 fi
 
-#sed 's/
 
 exit 0

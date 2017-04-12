@@ -31,6 +31,14 @@ vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name $name
 #getting box up and running
 cd "./database"
 vagrant.exe init database-server
+
+#changing the ip address of the machine
+$ans=read-host "Would you like to make your database server a public IP? (y/n) If yes specify the IP. Example: 192.168.1.200"
+  if ($ans -eq "y" -OR $ans -eq "Y")
+  {
+    cat .\Vagrantfile | %{$_ -replace "config.vm.network `"public_network`", ip: `"192.168.1.221`"", "`"config.vm.network `"public_network`", ip: `"192.168.1.220`""}
+  }
+
 vagrant.exe up
 
 #changing directories to build
