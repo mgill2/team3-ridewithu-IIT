@@ -111,6 +111,42 @@ else
   echo "database did NOT create"
 fi
 
+#changing the address to database master address
+sudo sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "sed updated the my.cnf file"
+else
+  echo "sed did NOT complete"
+fi
+
+#changing the server number so that the mysql slave can reach the master for #replication
+sudo sed 's/#server-id = 1/server-id = 1/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed the server number to 2 completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#changing line number 88 to remove the # for log_bin
+sudo sed '88s/#/ /' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed the # to space completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#changing the server number so that the mysql slave can reach the master for #replication
+sudo sed 's/#binlog_do_db = include_database_name/binlog_do_db  = master/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed binlog_do_db name to master completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
 mysql -u root < createuser.sql
 
 if [ $? = 0 ]
