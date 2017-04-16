@@ -98,7 +98,7 @@ else
 fi
 
 #changing the address to database master address
-sudo sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+sudo sed 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
