@@ -98,7 +98,7 @@ else
 fi
 
 #changing the bind address to database slave address
-sudo sed 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
+sudo sed -i 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
@@ -106,8 +106,17 @@ else
   echo "sed did NOT complete"
 fi
 
+#changing line number 88 to remove the # for log_bin
+sudo sed -i '88s/#//' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed the # to space completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
 #changing the server number so that the mysql slave can reach the master for #replication. Must be the name of the database you want to replicate on master. #Example: master
-sudo sed 's/#binlog_do_db = include_database_name/binlog_do_db  = master/' /etc/mysql/my.cnf
+sudo sed -i 's/#binlog_do_db\t\t= include_database_name/binlog_do_db\t\t= master/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed binlog_do_db name to master completed successfully"
@@ -116,7 +125,7 @@ else
 fi
 
 #changing the server number so that the mysql slave can reach the master for #replication needs to be a different server number than master.
-sudo sed 's/#server-id = 1/server-id = 2/' /etc/mysql/my.cnf
+sudo sed -i 's/#server-id\t\t= 1/server-id\t\t= 2/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed the server number to 2 completed successfully"
