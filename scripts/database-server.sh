@@ -112,7 +112,7 @@ else
 fi
 
 #changing the bind address to database master address
-sudo sed 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+sudo sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "sed updated the my.cnf file"
@@ -121,7 +121,7 @@ else
 fi
 
 #changing the server number so that the mysql slave can reach the master for #replication
-sudo sed 's/#server-id = 1/server-id = 1/' /etc/mysql/my.cnf
+sudo sed -i 's/#server-id\t\t= 1/server-id = 1/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed the server number to 2 completed successfully"
@@ -130,7 +130,7 @@ else
 fi
 
 #changing line number 88 to remove the # for log_bin
-sudo sed '88s/#/ /' /etc/mysql/my.cnf
+sudo sed -i '88s/#//' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed the # to space completed successfully"
@@ -139,7 +139,7 @@ else
 fi
 
 #changing the server number so that the mysql slave can reach the master for #replication
-sudo sed 's/#binlog_do_db = include_database_name/binlog_do_db  = master/' /etc/mysql/my.cnf
+sudo sed -i 's/#binlog_do_db\t\t= include_database_name/binlog_do_db\t\t= master/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed binlog_do_db name to master completed successfully"
