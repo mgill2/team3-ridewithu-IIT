@@ -111,8 +111,53 @@ else
   echo "database did NOT create"
 fi
 
-mysql -u root < createuser.sql
+#changing the bind address to database master address
+sudo sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "sed updated the my.cnf file"
+else
+  echo "sed did NOT complete"
+fi
 
+#changing the server number so that the mysql slave can reach the master for #replication
+sudo sed -i 's/#server-id\t\t= 1/server-id = 1/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed the server number to 2 completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#changing line number 88 to remove the # for log_bin
+sudo sed -i '88s/#//' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed the # to space completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#changing the server number so that the mysql slave can reach the master for #replication
+sudo sed -i 's/#binlog_do_db\t\t= include_database_name/binlog_do_db\t\t= master/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed binlog_do_db name to master completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#restarting mysql server to take the new changes
+sudo service mysql restart
+if [ $? = 0 ]
+then
+  echo "restarting mysql completed successfully"
+else
+  echo "mysql restart did NOT complete"
+fi
+
+#running mysql script in ./Database folder to create users
+mysql -u root < createuser.sql
 if [ $? = 0 ]
 then
   echo "users created successfully"
@@ -120,13 +165,5 @@ else
   echo "users did NOT create"
 fi
 
-mysql -u root < insertdata.sql
-
-if [ $? = 0 ]
-then
-  echo "inserted data successfully"
-else
-  echo "insert data did NOT complete"
-fi
 
 exit 0

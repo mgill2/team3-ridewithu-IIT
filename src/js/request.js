@@ -97,13 +97,13 @@ $("#button-to-submit").click(function() {
 
             $.ajax({
               type: "POST",
-              url: "Database/save-points.php",
+              url: "../scripts/Database/save-points.php",
               data: { 
                 origin_address: origin_addr,
                 destination_address: destination_addr
               },
         success: function(html){
-          //alert(html);
+          alert(html);
           window.location.href = 'listride.php?';
             }
         });
