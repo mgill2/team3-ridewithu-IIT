@@ -5,4 +5,5 @@ CHANGE MASTER TO
 	master_log_file='', 
   master_log_pos=4;
 
+use master;
 start slave;
