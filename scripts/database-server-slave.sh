@@ -97,7 +97,7 @@ else
   echo "database slave did NOT create"
 fi
 
-#changing the address to database master address
+#changing the bind address to database slave address
 sudo sed 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
@@ -106,13 +106,41 @@ else
   echo "sed did NOT complete"
 fi
 
-#changing the server number so that the mysql slave can reach the master for #replication
+#changing the server number so that the mysql slave can reach the master for #replication. Must be the name of the database you want to replicate on master. #Example: master
+sudo sed 's/#binlog_do_db = include_database_name/binlog_do_db  = master/' /etc/mysql/my.cnf
+if [ $? = 0 ]
+then
+  echo "changed binlog_do_db name to master completed successfully"
+else
+  echo "changing server number did NOT complete"
+fi
+
+#changing the server number so that the mysql slave can reach the master for #replication needs to be a different server number than master.
 sudo sed 's/#server-id = 1/server-id = 2/' /etc/mysql/my.cnf
 if [ $? = 0 ]
 then
   echo "changed the server number to 2 completed successfully"
 else
   echo "changing server number did NOT complete"
+fi
+
+#running mysql script from ./Database folder to run the change master to command in #mysql so the slave can replicate
+mysql -u root < change-master-to.sql
+if [ $? = 0 ]
+then
+  echo "change master to command completed successfully"
+else
+  echo "change master to command did NOT complete"
+fi
+
+
+#restarting the mysql to take the changes made
+sudo service mysql restart
+if [ $? = 0 ]
+then
+  echo "restarting mysql completed successfully"
+else
+  echo "mysql restart did NOT complete"
 fi
 
 
