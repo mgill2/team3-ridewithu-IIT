@@ -8,12 +8,16 @@ cd "../build"
 
 #showing the previous boxes
 vagrant box list
+
+echo "Do you want to remove another box?"
+  read cont
+  
 while [ $cont = "y" ] || [ $cont = "Y" ];
-do
-  vagrant box list
+ do
   echo "Would you like to remove any boxes? (y/n)"
   read awnser
   if [ $awnser = "y" ] || [ $awnser = "Y" ]
+  then
     echo "Which box would you like to remove?"
     read rmBox
     vagrant box remove $rmBox
