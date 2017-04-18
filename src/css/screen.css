@@ -369,8 +369,12 @@ REQUEST-SPECIFIC STYLES START
 
 @import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
+label {
+  display: block;
+}
+
 .controls {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
     box-sizing: border-box;
@@ -378,6 +382,31 @@ REQUEST-SPECIFIC STYLES START
     height: 32px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+select, 
+.leaving-data,
+#datepicker {
+  /*margin-top: 10px;*/
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+}
+
+.leaving-data-title {
+  margin-left: 12px;
+  margin-top: 10px;
 }
 
 #origin-input,
@@ -390,6 +419,11 @@ REQUEST-SPECIFIC STYLES START
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
     width: 200px;
+    display: block;
+}
+
+#destination-input {
+  margin-top: 10px;
 }
 
 #origin-input:focus,
@@ -398,7 +432,9 @@ REQUEST-SPECIFIC STYLES START
 }
 
 #button-to-submit {
-    margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 /*
