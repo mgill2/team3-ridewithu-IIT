@@ -12,3 +12,8 @@ CREATE TABLE IF NOT EXISTS items
 	PASSWORD varchar(50)      NOT NULL,
     PRIMARY KEY (ID)
 );
+
+CREATE TABLE IF NOT EXISTS listride 
+(
+  
+)
