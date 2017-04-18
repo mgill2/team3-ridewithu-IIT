@@ -425,7 +425,7 @@ input[type=text]:focus,
     margin-left: 12px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 90%;
+    width: 93%;
     display: block;
 }
 
@@ -437,7 +437,7 @@ input[type=text]:focus,
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
-  width: 90%;
+  width: 93%;
   font-size: 15px;
   background-color: rgb(45, 56, 137);
   color: white;
