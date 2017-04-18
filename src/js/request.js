@@ -41,9 +41,9 @@
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(submit_button);
+        //this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+        //this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+        //this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(submit_button);
         /*this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);*/
       }
 
@@ -89,11 +89,13 @@
       };
 
 $(document).ready( function() {
-$("#button-to-submit").click(function() {
 
-  origin_addr = $("#origin-input").val(); 
-  destination_addr = $("#destination-input").val();
-  console.log(destination_addr);
+  $( "#datepicker" ).datepicker();
+  $("#button-to-submit").click(function() {
+
+    origin_addr = $("#origin-input").val(); 
+    destination_addr = $("#destination-input").val();
+    console.log(destination_addr);
 
             $.ajax({
               type: "POST",
