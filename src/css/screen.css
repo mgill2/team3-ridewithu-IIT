@@ -404,9 +404,16 @@ select,
   text-overflow: ellipsis;
 }
 
+input[type=text]:focus,
+#datepicker:focus {
+  border: 2px solid #555;
+}
 .leaving-data-title {
   margin-left: 12px;
-  margin-top: 10px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: rgb(45, 56, 137);
+  font-size: 17px;
 }
 
 #origin-input,
@@ -418,7 +425,7 @@ select,
     margin-left: 12px;
     padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 200px;
+    width: 90%;
     display: block;
 }
 
@@ -426,15 +433,16 @@ select,
   margin-top: 10px;
 }
 
-#origin-input:focus,
-#destination-input:focus {
-    border-color: #4d90fe;
-}
-
 #button-to-submit {
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
+  width: 90%;
+  font-size: 15px;
+  background-color: rgb(45, 56, 137);
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
 /*
