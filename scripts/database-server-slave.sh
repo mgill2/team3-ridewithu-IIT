@@ -88,13 +88,21 @@ fi
 
 #running the sql script to create the database
 cd ./Database
-mysql -u root < createdata-slave.sql
+mysql -u root < createdata.sql
 
 if [ $? = 0 ]
 then
   echo "database slave created successfully"
 else
   echo "database slave did NOT create"
+fi
+
+mysql -u root < change-master-to.sql
+if [ $? = 0 ]
+then
+  echo "database slave change master to command executed successfully"
+else
+  echo "database slave did NOT execute change master slave command successfully"
 fi
 
 #changing the bind address to database slave address
