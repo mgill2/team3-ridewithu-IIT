@@ -29,59 +29,72 @@ for the ips that you need
 
 ================================================
 
-### For scripting: Need to know
+### FIRST STEPS: 
+For scripting: Need to know
 
-All the users first clone this directory:
+1. First, clone this directory:
 https://github.com/illinoistech-itm/team-3-withu.git
 
-(git clone https://github.com/illinoistech-itm/team-3-withu.git)
+git clone https://github.com/illinoistech-itm/team-3-withu.git
 
-Now go to scripts directory
+2. Go to scripts directory
 
 cd scripts
 
-### FOR MAC USERS run:
+3. ### FOR MAC USERS run:
 >
->packer build --force ubuntu14045-vanilla-database.json
+> 1.
+><b>packer build --force ubuntu14045-vanilla-database.json</b>
 >
->packer build --force ubuntu14045-vanilla-webserver.json
+><b>packer build --force ubuntu14045-vanilla-database-slave.json</b>
 >
->then run machusers.sh (if you dont want to do the vagrant up, vagrant box add, or if you want to do the steps manually see below)
->For Windows Users (see further below)
+><b>packer build --force ubuntu14045-vanilla-webserver.json</b>
 >
->if you dont feel comforatable doing the script do this
+>(Note: this will take some time between each one, the power of the machine you use will vary the time greatly)
+>
+>
+> 2. After the builds have been completed:
+> run machusers.sh:
+> <b>./macusers.sh</b>
+> (if you dont want to do the vagrant up, vagrant box add, or if you want to do the steps manually see below)
+>
+>
+>if you dont feel comfortable doing the script do this:
 >
 >go to the /team-3-withu/build
 >
->vagrant box add ubuntu14045-vanilla-database.box --name database-server
+><b>vagrant box add ubuntu14045-vanilla-database.box --name database-server</b>
 >
->vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2
+><b>vagrant box add ubuntu14045-vanilla-webserver.box --name webserver2</b>
 >
->cd up a directory and then go into the build cd into webserver (if you do not have a folder create one) then
->vagrant ssh
+>cd up a directory:
+><b>cd ..</b>
+>Then, go into the build directory, cd into webserver directory (NOTE: if you do not have a directory for this already, create one) 
 >
->then open another terminal and go to the build directory and then database and do 
->vagrant ssh
+> then, <b>vagrant ssh</b>
 >
->Or you can do it MANUALLY
+>then, open another terminal, and go into the build directory again, cd into database directory (NOTE: if you do not have a directory for this already, create one)
+>then, <b>vagrant ssh</b>
+>
+>OR, you can do it MANUALLY
 >
 >go into database folder (add one if you do not have one in build)
 >
->vagrant init databaser-server
+><b>vagrant init database-server</b> (if you named it this)
 >
->vagrant up
+><b>vagrant up</b>
 >
->vagrant ssh
+><b>vagrant ssh</b>
 >
 >go to webserver folder (add one if you do not have one in build) 
 >
->vagrant init webserver2
+><b>vagrant init webserver</b> (if you named it this)
 >
->vagrant up 
+><b>vagrant up</b> 
 >
->vagrant ssh
+><b>vagrant ssh</b>
 
-### For Windows Users
+3. ### FOR WINDOWS USERS run:
 >
 >packer build --force ubuntu14045-vanilla-database.json
 >packer build --force ubuntu14045-vanilla-webserver.json
@@ -106,28 +119,26 @@ cd scripts
 >cd up a directory and then go into the build cd into webserver and vagrant ssh
 >then open another terminal and go to the build directory and then database and do vagrant ssh
 >
->or if your doing it manually these steps
+>OR, you can do it MANUALLY
 >
->go into database folder (create one if needed)
+>go into database folder (add one if you do not have one in build)
 >
->vagrant init databaser-server (or the one you created)
+><b>vagrant init database-server</b> (if you named it this)
 >
->vagrant up
+><b>vagrant up</b>
 >
->vagrant ssh
+><b>vagrant ssh</b>
 >
->go to webserver folder (create one if needed)
+>go to webserver folder (add one if you do not have one in build) 
 >
->vagrant init webserver2 (or the one you created)
+><b>vagrant init webserver</b> (if you named it this)
 >
->vagrant up 
+><b>vagrant up</b> 
 >
->vagrant ssh
->
->after that you have everything ready to go
+><b>vagrant ssh</b>
 
-### After Webserver and Database are Set Up
->Change direcctory to database and do vim Vagrantfile
+4. ### After Webserver and Database are Set Up
+>Change directory to database, then database-salve, then webserver, and do vim Vagrantfile
 >
 >In Vagrantfile, add find this line config.vm.network "public_network"
 >
@@ -135,7 +146,7 @@ cd scripts
 >
 >config.vm.network "public_network", ip: "yourIPGoesHere"
 >
->Then do vagrant reload --provision
+>Then do vagrant reload --provision in each one.
 >
 
 //additon
