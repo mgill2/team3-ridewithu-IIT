@@ -95,14 +95,25 @@ $(document).ready( function() {
 
     origin_addr = $("#origin-input").val(); 
     destination_addr = $("#destination-input").val();
-    console.log(destination_addr);
+    datevalue = $("#datepicker").val();
+    hour = $("#hour").val();
+    minutes = $("#minutes").val();
+    clock = $("#clock").val();
+    //console.log(destination_addr);
+    //console.log(hour);
+    console.log(clock);
+    console.log(datevalue);
 
             $.ajax({
               type: "POST",
               url: "../scripts/Database/save-points.php",
               data: { 
                 origin_address: origin_addr,
-                destination_address: destination_addr
+                destination_address: destination_addr,
+                leaving_date: datevalue,
+                leaving_hour: hour,
+                leaving_minutes: minutes,
+                leaving_clock: clock
               },
         success: function(html){
           alert(html);
