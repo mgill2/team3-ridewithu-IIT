@@ -89,8 +89,10 @@
       };
 
 $(document).ready( function() {
+  $("#datepicker").datepicker(
+      { minDate: 0 }
+  );
 
-  $( "#datepicker" ).datepicker();
   $("#button-to-submit").click(function() {
 
     origin_addr = $("#origin-input").val(); 
