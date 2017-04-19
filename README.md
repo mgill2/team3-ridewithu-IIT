@@ -16,11 +16,11 @@ Database folder.
 The other .my.cnf is in the scripts directory
 which is for the slave database.
 
-In the build folder make sure to have database
-and webserver folders. ADD IF NEEDED! BEFORE 
+In the build drectory, make sure to have database
+and webserver directories. ADD IF NEEDED! BEFORE 
 RUNNING ANYTHING
 
-If not running local host changed the IP in
+If not running local host change the IP in
 the sed commands in the database and 
 database-slave scripts.
 
@@ -41,7 +41,7 @@ git clone https://github.com/illinoistech-itm/team-3-withu.git
 
 cd scripts
 
-3. ### FOR MAC USERS run:
+3. ### FOR MAC/LINUX USERS run:
 >
 > 1.
 ><b>packer build --force ubuntu14045-vanilla-database.json</b>
