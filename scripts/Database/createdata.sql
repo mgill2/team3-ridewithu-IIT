@@ -20,4 +20,4 @@ CREATE TABLE IF NOT EXISTS listride
   EMAIL varchar(100)          NOT NULL,
   ORIGIN varchar(200)         NOT NULL,
   DESTINATION varchar(200)    NOT NULL
-)
+);
