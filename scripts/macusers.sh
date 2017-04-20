@@ -27,6 +27,33 @@ while [ $cont = "y" ] || [ $cont = "Y" ];
   echo "Do you want to remove another box?"
   read cont
 done
+
+#removing older artifacts
+echo "would you like to delete the older artifacts? (y/n)"
+  read delOld
+if [ $awnser = "y" ] || [ $awnser = "Y" ]
+  then
+    cd "./database"
+    rm .vagrant
+    rm Vagrantfile
+
+    cd "../database-slave"
+    rm .vagrant
+    rm Vagrantfile
+
+    cd "../webserver"
+    rm .vagrant
+    rm Vagrantfile
+
+    #going into the build folder
+    cd "../"
+  else [ $awnser = "n" ] || [ $awnser = "N" ]
+    echo "Be careful when running vagrant init and vagrant up it will take the old artifact"
+fi  
+
+#going into the build folder
+cd "../"
+
 #adding database boxes
 echo "Please enter the name of your box you would like to create for the database. Example: database-server"
 read name
