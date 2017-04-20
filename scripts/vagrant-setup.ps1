@@ -18,6 +18,7 @@ DO
     else 
     {
       write-host "Maybe next time!"
+      break
     }
   $cont=read-host "Do you want to delete any more boxes? (y/n)"
 }while($cont -eq "y" -OR $cont -eq "Y") 
@@ -36,7 +37,7 @@ vagrant.exe init database-server
 $ans=read-host "Would you like to make your database server a public IP? (y/n) If yes specify the IP. Example: 192.168.1.200"
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
-    cat .\Vagrantfile | %{$_ -replace "config.vm.network `"public_network`", ip: `"192.168.1.221`"", "`"config.vm.network `"public_network`", ip: `"192.168.1.220`""}
+    cat .\Vagrantfile | %{$'_ -replace "config.vm.network `"public_network`", ip: `"192.168.1.220`"", "`"config.vm.network `"public_network`", ip: `"192.168.1.221`""'}
   }
 
 vagrant.exe up
@@ -55,5 +56,19 @@ cd "./webserver"
 
 vagrant.exe init webserver2
 vagrant.exe up
+
+#changing directories to build
+cd "../"
+
+#asking the user for a name for database slave
+$dataslave=read-host "Please name the box of the database slave. Example: database-slave"
+
+#adding the vagrant box
+vagrant.exe box add ubuntu-vanilla-14045-database-slave-virtualbox.box
+
+cd "./database-slave"
+
+vagrant init $dataslave
+vagrant up
 
 
