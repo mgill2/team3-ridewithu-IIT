@@ -56,12 +56,12 @@ cd "../"
 
 #adding database boxes
 echo "Please enter the name of your box you would like to create for the database. Example: database-server"
-read name
-vagrant box add --name $name ./ubuntu-vanilla-14045-database-virtualbox.box
+  read database
+vagrant box add --name $database ./ubuntu-vanilla-14045-database-virtualbox.box
 
 #getting box up and running
 cd "./database"
-vagrant init $name
+vagrant init $database
 vagrant up
 
 #changing directories to build
@@ -69,15 +69,25 @@ cd "../"
 
 #adding webserver box to box list
 echo "Please enter the name of your box you would like to create for the webserver. Example: webserver"
-read name2
-vagrant box add --name $name2 ubuntu-vanilla-14045-webserver-virtualbox.box 
+  read webserver
+vagrant box add --name $webserver ubuntu-vanilla-14045-webserver-virtualbox.box 
 
 #getting box up and running
 cd "./webserver"
 
-vagrant init $name2
+vagrant init $webserver
 vagrant up
 
+cd "../"
+
+echo "Please enter the name of your box you would like to create for the database. Example: database-slave"
+  read dataslave
+vagrant box add --name $dataslave ubuntu-vanilla-14045-database-slave-virtualbox.box
+
+#changing to database slave directory
+cd "./database-slave"
+vagrant init $dataslave
+vagrant up
 
 
 
