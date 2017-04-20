@@ -23,6 +23,7 @@ while [ $cont = "y" ] || [ $cont = "Y" ];
     vagrant box remove $rmBox
   else [ $awnser = "n" ] || [ $awnser = "N" ]
     echo "Exiting loop"
+    break
   fi
   echo "Do you want to remove another box?"
   read cont
