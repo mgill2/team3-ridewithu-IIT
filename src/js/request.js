@@ -95,34 +95,42 @@ $(document).ready( function() {
 
   $("#button-to-submit").click(function() {
 
-    origin_addr = $("#origin-input").val(); 
-    destination_addr = $("#destination-input").val();
-    datevalue = $("#datepicker").val();
-    hour = $("#hour").val();
-    minutes = $("#minutes").val();
-    clock = $("#clock").val();
-    //console.log(destination_addr);
-    //console.log(hour);
-    console.log(clock);
-    console.log(datevalue);
+    if ($.trim($("#datepicker").val()) === "" || $.trim($("#hour").val()) === "" || $.trim($("#minutes").val()) === "" ||
+        $.trim($("#origin-input").val()) === "" || $.trim($("#destination-input").val()) === "") {
+      alert('Please fill up all values in form');
+      return false;
+    }
+   
+    else {
+      origin_addr = $("#origin-input").val(); 
+      destination_addr = $("#destination-input").val();
+      datevalue = $("#datepicker").val();
+      hour = $("#hour").val();
+      minutes = $("#minutes").val();
+      clock = $("#clock").val();
+      //console.log(destination_addr);
+      //console.log(hour);
+      console.log(clock);
+      console.log(datevalue);
 
-    $.ajax({
-      type: "POST",
-      url: "../scripts/Database/save-points.php",
-      data: { 
-        origin_address: origin_addr,
-        destination_address: destination_addr,
-        leaving_date: datevalue,
-        leaving_hour: hour,
-        leaving_minutes: minutes,
-        leaving_clock: clock
-      },
-      success: function(html){
-        alert(html);
-        window.location.href = 'listride.php?';
-      }
-    });
+      $.ajax({
+        type: "POST",
+        url: "../scripts/Database/save-points.php",
+        data: { 
+          origin_address: origin_addr,
+          destination_address: destination_addr,
+          leaving_date: datevalue,
+          leaving_hour: hour,
+          leaving_minutes: minutes,
+          leaving_clock: clock
+        },
+        success: function(html){
+          alert(html);
+          window.location.href = 'listride.php?';
+        }
+      });
     return false;
+    }
   });
 });
 
