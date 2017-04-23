@@ -1,5 +1,6 @@
 <?php
 session_start();
+    require_once('connectdatabase.php');
 	$origin_address= " ";
 	$destination_address= " ";
 	$origin_address = $_POST['origin_address'];
@@ -20,7 +21,7 @@ session_start();
 	$leaving_date = mysql_real_escape_string($leaving_date);
 	$leaving_time = $leaving_hour . ':' . $leaving_minutes . ':' . $leaving_clock;
 	$leaving_time = mysql_real_escape_string($leaving_time);
-	echo $leaving_time;
+	$query = "INSERT INTO listride (ORIGIN, DESTINATION, LEAVING_DATE, LEAVING_TIME) VALUES ('$origin_address','$destination_address','$leaving_date','$leaving_time')";
 	$_SESSION['destination'] = $destination_address;
 	$_SESSION['origin'] = $origin_address;
 	$_SESSION['leaving_date'] = $leaving_date;
