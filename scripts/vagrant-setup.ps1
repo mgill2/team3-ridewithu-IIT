@@ -26,18 +26,27 @@ DO
 #asking the user to name the boxes
 $name=read-host "Please name the box of the database server. Example: database-server"
 
-#running add box command
-vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name $name
+if ($name -eq "")
+{
+  $name = "database-server"
+  vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name $name
+}
 
+else
+{
+  #running add box command
+  vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name $name
+}
 #getting box up and running
 cd "./database"
 vagrant.exe init database-server
 
-#changing the ip address of the machine
+#changing the ip address of the machine 
 $ans=read-host "Would you like to make your database server a public IP? (y/n) If yes specify the IP. Example: 192.168.1.200"
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
-    cat .\Vagrantfile | %{$'_ -replace "config.vm.network `"public_network`", ip: `"192.168.1.220`"", "`"config.vm.network `"public_network`", ip: `"192.168.1.221`""'}
+    $ip=read-host "What is the new IP you want?"
+    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`", ip: ", `"config.vm.network `"public_network`", ip: `"$ip`""'}
   }
 
 vagrant.exe up
@@ -46,10 +55,19 @@ vagrant.exe up
 cd "../"
 
 #asking the user to name the boxes
-$name2=read-host "Please name the box of the webserver. Example: webserver2"
+$webserver=read-host "Please name the box of the webserver. Example: webserver"
 
-#adding webserver box to box list
-vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $name2
+
+if ($webserver -eq "")
+{
+  $webserver = "webserver"
+  vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $webserver
+}
+else 
+{
+  #adding webserver box to box list
+  vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $webserver
+}
 
 #getting box up and running
 cd "./webserver"
@@ -60,15 +78,22 @@ vagrant.exe up
 #changing directories to build
 cd "../"
 
-#asking the user for a name for database slave
+#asking the user for a name for database slave and setting a default value if enter #is hit
 $dataslave=read-host "Please name the box of the database slave. Example: database-slave"
 
-#adding the vagrant box
-vagrant.exe box add ubuntu-vanilla-14045-database-slave-virtualbox.box
-
+if ($dataslave -eq "")
+{
+  $dataslave = "database-slave"
+  vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $dataslave
+}
+else 
+{
+  #adding the vagrant box
+  vagrant.exe box add ubuntu-vanilla-14045-database-slave-virtualbox.box --name $dataslave
+}
 cd "./database-slave"
 
-vagrant init $dataslave
-vagrant up
+vagrant.exe init $dataslave
+vagrant.exe up
 
 
