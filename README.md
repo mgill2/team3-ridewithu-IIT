@@ -96,9 +96,11 @@ cd scripts
 
 3. ### FOR WINDOWS USERS run:
 >
->packer build --force ubuntu14045-vanilla-database.json
->packer build --force ubuntu14045-vanilla-webserver.json
- packer build --force ubuntu14045-vanilla-database-slave.json
+><b>packer build --force ubuntu14045-vanilla-database.json</b>
+>
+><b>packer build --force ubuntu14045-vanilla-webserver.json</b>
+>
+><b>packer build --force ubuntu14045-vanilla-database-slave.json</b>
 >
 >For running the script vagrant-setup.ps1 (this skips the steps of removing boxes, vagrant init, and vagrant up)
 >
