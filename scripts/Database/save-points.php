@@ -16,11 +16,11 @@ session_start();
 	echo $leaving_minutes;
 	echo $leaving_clock;
 
-	$origin_address = mysqli_real_escape_string($origin_address);
-	$destination_address = mysqli_real_escape_string($destination_address);
-	$leaving_date = mysqli_real_escape_string($leaving_date);
+	$origin_address = mysqli_real_escape_string($connection, $origin_address);
+	$destination_address = mysqli_real_escape_string($connection, $destination_address);
+	$leaving_date = mysqli_real_escape_string($connection, $leaving_date);
 	$leaving_time = $leaving_hour . ':' . $leaving_minutes . ':' . $leaving_clock;
-	$leaving_time = mysqli_real_escape_string($leaving_time);
+	$leaving_time = mysqli_real_escape_string($connection, $leaving_time);
 	$query = "INSERT INTO listride (ORIGIN, DESTINATION, LEAVING_DATE, LEAVING_TIME) VALUES ('$origin_address','$destination_address','$leaving_date','$leaving_time')";
 	$result = mysqli_query($connection, $query);
 	if ($result == true) {
