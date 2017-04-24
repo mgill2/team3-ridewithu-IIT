@@ -20,9 +20,9 @@
       <nav>
       <div class="navwrapper">
           <ul id="nav" class="navbar">
-            <li class="nav active"><a href="welcome.html">Home</a></li>
+            <li class="nav"><a href="welcome.html">Home</a></li>
             <li class="nav"><a href="request.html">Request Ride</a></li>
-            <li class="nav"><a href="ridelist.html">Ride list</a></li>
+            <li class="nav active"><a href="ridelist.html">Ride list</a></li>
             <li class="nav"><a href="https://iit.edu/news/iittoday/">IIT News</a></li>
             <li class="nav"><a href="help.html">Help</a></li>
             <li class="nav"><a href="index.html">Logout</a></li>
@@ -34,9 +34,9 @@
    <div id="sidenavbar" class="sidenavbar">
       <ul id="nav" class="navbar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <li class="nav active"><a href="welcome.html">Home</a></li>
+        <li class="nav"><a href="welcome.html">Home</a></li>
         <li class="nav"><a href="request.html">Request Ride</a></li>
-        <li class="nav"><a href="ridelist.html">Ride list</a></li>
+        <li class="nav active"><a href="ridelist.html">Ride list</a></li>
         <li class="nav"><a href="https://iit.edu/news/iittoday/">IIT News</a></li>
         <li class="nav"><a href="help.html">Help</a></li>
         <li class="nav"><a href="index.html">Logout</a></li>
@@ -50,71 +50,73 @@
       <section class="greeting">
         Welcome, User!
       </section>
-      </main> 
-    <h1>Ride List!</h1>
+    <h1>This page shows a list of requested rides in the area. These rides are either starting from an IIT Campus, or ending at one.</h1>
     
-    <div class="divTable">
-<div class="divTableBody">
-<table style="width:100%">
-<div class="divTableRow">
-<div class="divTableCell">Name</div>
-<div class="divTableCell">From</div>
-<div class="divTableCell">To</div>
-<div class="divTableCell">Pick up time</div>
-<div class="divTableCell">Contact</div>
-</div>
-<div class="divTableRow">
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-</div>
-<div class="divTableRow">
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-</div>
-<div class="divTableRow">
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-</div>
-<div class="divTableRow">
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-<div class="divTableCell">&nbsp;</div>
-</div>
-        
-	
-    <input id="origin-input" class="controls" type="text"
-        placeholder="Enter an origin location">
+    	<div class="divTable">
 
-    <input id="destination-input" class="controls" type="text"
-        placeholder="Enter a destination location">
-
-    <input id="button-to-submit" class="button-to-submit" type="button" value="submit" onclick="Redirect();">
-
-    <div id = "map"></div>
-
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
-    <input id="button-to-submit" class="button-to-submit" type="button" value="submit">
-    
+	<table>
+ 		 <tr>
+    		<th>Name</th>
+    		<th>From</th>
+   	 		<th>To</th>
+    		<th>Pick Up Time</th>
+    		<th>Contact Info</th>
+  		</tr>
+  		<tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+  		</tr>
+  		<tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+  		</tr>
+  		<tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+  		</tr>
+  		<tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+		</tr>
+		<tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+		</tr>
+		<tr>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+    		<td>&nbsp;</td>
+		</tr>
+	</table>
+			
+		
+    </main>
+    <main>
     <div id="map"></div>
-    
-    
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/site.js"></script>
-<script type="text/javascript" src="js/request.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6HYkswUWkVAfHAb4n33WiBocqk87GW3Y&libraries=places&callback=initMap"
+    </main>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/site.js"></script>
+		<script type="text/javascript" src="js/request.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6HYkswUWkVAfHAb4n33WiBocqk87GW3Y&libraries=places&callback=initMap"
         async defer></script>
-</script>
-</body>
+		</script>
+	</body>
 </html>
 
