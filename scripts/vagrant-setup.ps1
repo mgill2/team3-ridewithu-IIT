@@ -46,7 +46,7 @@ $ans=read-host "Would you like to make your database server a public IP? (y/n) I
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
     $ip=read-host "What is the new IP you want?"
-    cat .\Vagrantfile | %{$'_ -replace "config.vm.network `"public_network`", ip: `"192.168.1.220`"", "`"config.vm.network `"public_network`", ip: `"$ip`""'}
+    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`", ip: , ", `"config.vm.network `"public_network`", ip: `"$ip`""'}
   }
 
 vagrant.exe up
