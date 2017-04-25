@@ -12,11 +12,10 @@ if(isset($_POST) && !empty($_POST)) {
 
   if($count == 1) {
     $_SESSION['username']=$username;
-    header('Location: ../welcome.html');
+    header('Location: ../../src/welcome.html');
   }
   else {
-    echo '<script>alert("Username or Password is incorrect");</script>';  
-    header('Location: ../index.php');
+    header('Location: ../../src/index.php');
   }
 }
 ?>
