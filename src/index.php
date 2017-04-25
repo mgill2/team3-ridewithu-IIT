@@ -10,8 +10,7 @@ if (login_users_only($mysqli) == true) {
 else {
   $logged = 'out';
 } */
-require_once('Database/connectdatabase.php');
-include '../CAS-Php-plugin-for-Test-CAS/CAS_Php/includes/CAS.php';
+require_once('../scripts/Database/connectdatabase.php');
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +23,6 @@ include '../CAS-Php-plugin-for-Test-CAS/CAS_Php/includes/CAS.php';
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css" />
     <link rel="stylesheet" href="css/screen.css" />
-    <script type="text/JavaScript" src="js/sha512.js"></script>
-    <script type="text/JavaScript" src="js/forms.js"></script>
   </head>
 
   <body class="login">
