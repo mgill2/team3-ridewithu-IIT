@@ -126,7 +126,7 @@ $(document).ready( function() {
         },
         success: function(html){
           alert(html);
-          window.location.href = 'listride.php?';
+          window.location.href = 'ridelist.php?';
         }
       });
     return false;
