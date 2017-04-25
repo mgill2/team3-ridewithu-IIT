@@ -89,6 +89,7 @@ body > header {
 main {
   max-width: 80%;
   margin: 0 auto;
+  padding-bottom: 2em;
 }
 
 header h1 {
@@ -353,6 +354,7 @@ WELCOME-SPECIFIC STYLES START
    height: 25em; 
    width: 100%;
    display: block;
+   padding-bottom: 2em;
 }
      
 /*
@@ -451,6 +453,63 @@ REQUEST-SPECIFIC STYLES END
 ==========================================================================
 */
 
+/*
+==========================================================================
+RIDE LIST-SPECIFIC STYLES START
+==========================================================================
+*/
+.divTable {
+	padding-bottom: 3em;
+	padding-top: 1em;
+	
+}
+
+.divTableBody {
+
+}
+
+.divTableRow {
+
+}
+
+.divTableHeader {
+	background-color: #dc002a;
+    color: white;
+}
+
+tr:hover {background-color: #f5f5f5} {
+	background-color: #4CAF50;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 1.5em;
+    font-size: 1.15em;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #dc002a;
+    color: white;
+    text-align: center;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+}
+
+td {
+	padding: 1em;
+}
+/*
+==========================================================================
+RIDE LIST-SPECIFIC STYLES END
+==========================================================================
+*/
 
 /*
 ==========================================================================
