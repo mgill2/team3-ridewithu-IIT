@@ -41,6 +41,10 @@ if ($row && crypt($password, $row['pwd']) == $row['pwd']) {
     echo 'Authentication failed for ' . htmlspecialchars($username) . '.';
 }
 
+require_once '/htmlpurifier-4.9.2/library/HTMLPurifier.auto.php';
+$config = HTMLPurifier_Config::createDefault();
+$purifier = new HTMLPurifier($config);
+$clean_html = $purifier->purify($dirty_html);
 
 ?>
 
