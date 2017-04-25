@@ -22,25 +22,6 @@ phpCAS::forceAuthentication();
 // for this test, simply print that the authentication was successfull
 
 
-
-// storing password hash
-// $random_chars retrieved e.g. using /dev/random
-$query  = sprintf("INSERT INTO users(name,pwd) VALUES('%s','%s');",
-            pg_escape_string($username),
-            pg_escape_string(crypt($password, '$2a$07$' . $random_chars . '$')));
-$result = pg_query($connection, $query);
-
-// querying if user submitted the right password
-$query = sprintf("SELECT pwd FROM users WHERE name='%s';",
-            pg_escape_string($username));
-$row = pg_fetch_assoc(pg_query($connection, $query));
-
-if ($row && crypt($password, $row['pwd']) == $row['pwd']) {
-    echo 'Welcome, ' . htmlspecialchars($username) . '!';
-} else {
-    echo 'Authentication failed for ' . htmlspecialchars($username) . '.';
-}
-
 require_once '/htmlpurifier-4.9.2/library/HTMLPurifier.auto.php';
 $config = HTMLPurifier_Config::createDefault();
 $purifier = new HTMLPurifier($config);
