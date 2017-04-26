@@ -505,6 +505,22 @@ th {
 td {
 	padding: 1em;
 }
+
+/*
+==========================================================================
+RIDE LIST.PHP STYLES START
+=========================================================================
+*/
+
+.ridelist-content > ol {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ridelist-content > ol > li {
+  flex: 0 1 45%;
+  padding: 0;
+}
 /*
 ==========================================================================
 RIDE LIST-SPECIFIC STYLES END
