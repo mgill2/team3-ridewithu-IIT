@@ -41,8 +41,8 @@ require_once('../scripts/Database/connectdatabase.php');
       <div class="navwrapper">
           <ul id="nav" class="navbar">
             <li class="nav"><a href="welcome.html">Home</a></li>
-            <li class="nav active"><a href="request.html">Request Ride</a></li>
-            <li class="nav"><a href="ridelist.html">Ride List</a></li>
+            <li class="nav"><a href="request.html">Request Ride</a></li>
+            <li class="nav active"><a href="ridelist.html">Ride List</a></li>
             <li class="nav"><a href="https://iit.edu/news/iittoday/">IIT News</a></li>
             <li class="nav"><a href="help.html">Help</a></li>
             <li class="nav"><a href="index.html">Logout</a></li>
@@ -55,8 +55,8 @@ require_once('../scripts/Database/connectdatabase.php');
       <ul id="nav" class="navbar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <li class="nav"><a href="welcome.html">Home</a></li>
-        <li class="nav active"><a href="request.html">Request Ride</a></li>
-        <li class="nav"><a href="ridelist.html">Ride List</a></li>
+        <li class="nav"><a href="request.html">Request Ride</a></li>
+        <li class="nav active"><a href="ridelist.html">Ride List</a></li>
         <li class="nav"><a href="https://iit.edu/news/iittoday/">IIT News</a></li>
         <li class="nav"><a href="help.html">Help</a></li>
         <li class="nav"><a href="index.html">Logout</a></li>
