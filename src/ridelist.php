@@ -72,13 +72,25 @@ require_once('../scripts/Database/connectdatabase.php');
           <article class="ridelist-content">
             <ol>
               <li class="user-info">
-                <ol class="listrides">
+                <ol class="location-title">
+                  <li>Origin</li>
+                  <li>Destination</li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="location">
                   <li><?php echo $row['ORIGIN']; ?></li>
                   <li><?php echo $row['DESTINATION']; ?></li>
                 </ol>
               </li>
               <li class="user-info">
-                <ol class="listrides">
+                <ol class="date-time-header">
+                  <li>Date</li>
+                  <li>Time</li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="date-time-value">
                   <li><?php echo $row['LEAVING_DATE']; ?></li>
                   <li><?php echo $row['LEAVING_TIME']; ?></li>
                 </ol>
