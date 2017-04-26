@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $fist_name = $_SESSION['first_name'];
   echo "<script>console.log('$first_name');</script>";
 ?>
