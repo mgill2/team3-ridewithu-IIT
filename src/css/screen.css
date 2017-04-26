@@ -517,10 +517,47 @@ RIDE LIST.PHP STYLES START
   justify-content: space-between;
 }
 
-.ridelist-content > ol > li {
-  flex: 0 1 45%;
-  padding: 0;
+/*.ridelist-content > ol > li {
+  flex: 1 100%;
+  padding: 0.5em;
 }
+*/
+.ridelist-content {
+  background: rgb(242, 242, 242);
+  margin-top: 1.5em;
+  margin-left: 0.6em;
+  width: 98%;
+}
+
+.location-title {
+  flex-basis: 5px;
+  flex-shrink: 0;
+  margin-left: 0.7em;
+  font-weight: bold;
+}
+
+.location-title li,
+.location li,
+.date-time-header li,
+.date-time-value li {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+.location {
+  flex-grow: 3;
+}
+
+.date-time-header {
+  font-weight: bold;
+  flex-basis: 1px;
+  flex-shrink: 0;
+}
+
+.date-time-value {
+  text-align: left;
+  flex-grow: 1;
+  margin-right: 0.7em;
+}            
 /*
 ==========================================================================
 RIDE LIST-SPECIFIC STYLES END
