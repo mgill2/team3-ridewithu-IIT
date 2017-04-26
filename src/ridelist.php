@@ -27,7 +27,6 @@ if(isset($_SESSION['destination']) && isset($_SESSION['origin'])) {
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/black-tie/jquery-ui.css" type="text/css">
-    <script type="text/php" src="database.php"></script>
   </head>
 
   <body class="index">
@@ -67,9 +66,29 @@ if(isset($_SESSION['destination']) && isset($_SESSION['origin'])) {
     <div id="mainnavbar">
       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
     </div>
-<?php }
-else {
+    <?php
+      while($row=mysqli_fetch_assoc($result))
+      	{ ?>
+          <article class="ridelist-content">
+            <ol>
+              <li class="user-info">
+                <ol class="listrides">
+                  <li><?php echo $row['ORIGIN']; ?></li>
+                  <li><?php echo $row['DESTINATION']; ?></li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="listrides">
+                  <li><?php echo $row['LEAVING_DATE']; ?></li>
+                  <li><?php echo $row['LEAVING_TIME']; ?></li>
+                </ol>
+              </li>
+            </ol>
+          </article>
+  <?php }
+   }
+  else {
 	die( "Destination and origin are not set");
-}
+  }
 
 ?>
