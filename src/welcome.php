@@ -1,6 +1,6 @@
 <?php
   session_start();
-  $fist_name = $_SESSION['first_name'];
+  $first_name = $_SESSION['first_name'];
   echo "<script>console.log('$first_name');</script>";
 ?>
 <!DOCTYPE html>
