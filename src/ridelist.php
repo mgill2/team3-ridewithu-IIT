@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once('connectdatabase.php');
-if(isset($_SESSION['destination']) && isset($_SESSION['origin'])) {
+require_once('../scripts/Database/connectdatabase.php');
+/*if(isset($_SESSION['destination']) && isset($_SESSION['origin'])) {
 	$destination = $_SESSION['destination'];
 	$origin = $_SESSION['origin'];
 	$leaving_date = $_SESSION['leaving_date'];
@@ -13,7 +13,7 @@ if(isset($_SESSION['destination']) && isset($_SESSION['origin'])) {
 	echo $leaving_date.'<br>';
 	echo $leaving_hour.'<br>';
 	echo $leaving_minutes.'<br>';
-	echo $leaving_clock;
+	echo $leaving_clock;*/
 
 	$query= "SELECT * FROM listride";
 	$result = mysqli_query($connection, $query); ?>
@@ -86,9 +86,9 @@ if(isset($_SESSION['destination']) && isset($_SESSION['origin'])) {
             </ol>
           </article>
   <?php }
-   }
+   /*}
   else {
 	die( "Destination and origin are not set");
   }
-
+*/
 ?>
