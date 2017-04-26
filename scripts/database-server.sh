@@ -111,6 +111,16 @@ else
   echo "database did NOT create"
 fi
 
+#running mysql script in ./Database folder to create users
+mysql -u root < createuser.sql
+if [ $? = 0 ]
+then
+  echo "users created successfully"
+else
+  echo "users did NOT create"
+fi
+
+
 #changing the bind address to database master address
 sudo sed -i 's/127\.0\.0\.1/192\.168\.1\.220/' /etc/mysql/my.cnf
 if [ $? = 0 ]
@@ -154,15 +164,6 @@ then
   echo "restarting mysql completed successfully"
 else
   echo "mysql restart did NOT complete"
-fi
-
-#running mysql script in ./Database folder to create users
-mysql -u root < createuser.sql
-if [ $? = 0 ]
-then
-  echo "users created successfully"
-else
-  echo "users did NOT create"
 fi
 
 
