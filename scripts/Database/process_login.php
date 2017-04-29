@@ -14,7 +14,7 @@ if(isset($_POST) && !empty($_POST)) {
     $row = mysqli_fetch_assoc($result);
     //$_SESSION['first_name'] = $row["FIRST_NAME"];
     //$_SESSION['last_name'] = $row["LAST_NAME"];
-    $name = $row["FIRST_NAME"] . ' ' . $row["LAST_NAME"]
+    $name = $row["FIRST_NAME"] . ' ' . $row["LAST_NAME"];
     $_SESSION['name'] = $name;
     $_SESSION['email'] = $row["EMAIL"];
     $_SESSION['username']=$username;
