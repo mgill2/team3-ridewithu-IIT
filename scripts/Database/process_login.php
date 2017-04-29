@@ -8,7 +8,7 @@ if(isset($_POST) && !empty($_POST)) {
 
   $sql = "SELECT * FROM users WHERE USERNAME='$username' AND PASSWORD='$password'";
   $result = mysqli_query($connection, $sql);
-  echo $count = mysqli_num_rows($result);
+  //echo $count = mysqli_num_rows($result);
 
   if($count == 1) {
     $row = mysqli_fetch_assoc($result);
