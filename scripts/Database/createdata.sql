@@ -21,5 +21,6 @@ CREATE TABLE IF NOT EXISTS listride
   ORIGIN varchar(200)        NOT NULL,
   DESTINATION varchar(200)   NOT NULL,
   LEAVING_DATE varchar(15)   NOT NULL,
-  LEAVING_TIME varchar(20)   NOT NULL
+  LEAVING_TIME varchar(20)   NOT NULL,
+  KEY (ID)
 );
