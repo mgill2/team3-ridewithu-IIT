@@ -125,7 +125,7 @@ $(document).ready( function() {
           leaving_clock: clock
         },
         success: function(html){
-          alert(html);
+          alert('Your Request Has Gone Successfully');
           window.location.href = 'ridelist.php?';
         }
       });
