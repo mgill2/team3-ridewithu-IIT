@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,shrink-to-fit=no" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
-    <script type="text/php" src="database.php"></script>
 </head>
 
 <body class="index">
@@ -89,8 +88,7 @@
     <script type="text/javascript" src="js/site.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhj5z1Bj0Nl7LPPiEzjEdECnUeOoXJI6w&callback=initMap" async defer>
     </script>
     
 </body>
