@@ -16,7 +16,7 @@ session_start();
 	//echo $leaving_date;
 	//echo $leaving_hour;
 	//echo $leaving_minutes;
-	/echo $leaving_clock;
+	//echo $leaving_clock;
 
 	$origin_address = mysqli_real_escape_string($connection, $origin_address);
 	$destination_address = mysqli_real_escape_string($connection, $destination_address);
