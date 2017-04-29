@@ -73,6 +73,26 @@ require_once('../scripts/Database/connectdatabase.php');
             <ol>
               <li class="user-info">
                 <ol class="location-title">
+                  <li>Name</li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="location">
+                  <li><?php echo $row['NAME']; ?></li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="location-title">
+                  <li>Email</li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="location">
+                  <li><?php echo $row['EMAIL']; ?></li>
+                </ol>
+              </li>
+              <li class="user-info">
+                <ol class="location-title">
                   <li>Origin</li>
                   <li>Destination</li>
                 </ol>
