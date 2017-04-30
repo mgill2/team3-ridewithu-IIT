@@ -90,7 +90,7 @@ require_once('../scripts/Database/connectdatabase.php');
                   <li>Email</li>
                   <li>Date</li>
                   <li>Time</li>
-                  <li><a href="../scripts/Database/ridedelete.php?id=<?php echo $row['ID']; ?>">Delete Request</a></li>
+                  <li><a href="../scripts/Database/deleteride.php?id=<?php echo $row['ID']; ?>">Delete Request</a></li>
                   <li>Driver</li>
                 </ol>
               </li>
