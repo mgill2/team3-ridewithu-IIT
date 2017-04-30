@@ -27,17 +27,19 @@
           </script>";
     }
     else {
-    $sql = "UPDATE listride SET DRIVER='$driver_name' WHERE ID='$id";
-    $newResult = mysqli_query($connection, $sql);
-    echo "<script>
-            alert('Thank you, ' + $driver_name);
-            window.location.href='../../src/ridelist.php';
+      $sql = "UPDATE listride SET DRIVER='$driver_name' WHERE ID='$id'";
+      $newResult = mysqli_query($connection, $sql);
+      if($newResult == true) {
+        echo "<script>
+          alert('Thank you, ' + '$driver_name');
+          window.location.href='../../src/ridelist.php';
           </script>";
+      }
+      else { echo "<script>console.log('query wrong');</script>";}
     }
   }
-
-else {
-  echo "<script>console.log('Something wrong'); </script>";
-}
+  else {
+    echo "<script>console.log('Something wrong'); </script>";
+  }
 ?>
                     
