@@ -20,12 +20,6 @@
     $email = $row['EMAIL'];
      echo "<script>console.log('$email'); </script>";
     if($email == $_SESSION['email']) {
-     // echo '<script>alert("Please Wait For Driver"); </script>';
-     // header('Location: ../../src/ridelist.php');
-    echo "<script>
-            alert('Please wait for a driver!!!');
-            window.location.href='../../src/ridelist.php';
-          </script>";
       $sql = "DELETE FROM listride WHERE ID = '$id'";
       $newResult = mysqli_query($connection, $sql);
       if($newResult == true) {
@@ -36,7 +30,7 @@
       }
     }
     else {
-      echo "<script>alert('Sorry! Please try again');</script>";
+      echo "<script>alert('Sorry! Ride cannot be deleted');</script>";
     }
   }
   else {
