@@ -92,7 +92,7 @@ else
   echo "cd did NOT complete"
 fi
 
-sudo cp -r *.html js css img  /var/www/html
+sudo cp -r *.php js css img  /var/www/html
 if [ $? = 0 ]
 then
   echo "copied info into /var/www/html"
