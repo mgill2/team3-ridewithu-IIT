@@ -90,6 +90,8 @@ require_once('../scripts/Database/connectdatabase.php');
                   <li>Email</li>
                   <li>Date</li>
                   <li>Time</li>
+                  <li><a href="../scripts/Database/ridedelete.php?id=<?php echo $row['ID']; ?>">Delete Request</a></li>
+                  <li>Driver</li>
                 </ol>
               </li>
               <li class="user-info">
@@ -98,7 +100,7 @@ require_once('../scripts/Database/connectdatabase.php');
                   <li><?php echo $row['LEAVING_DATE']; ?></li>
                   <li><?php echo $row['LEAVING_TIME']; ?></li>
                   <li><a href="../scripts/Database/ride.php?id=<?php echo $row['ID']; ?>">Give A Ride</a></li>
-                  <li>Driver - <?php echo $row['DRIVER']; ?></li>
+                  <li><?php echo $row['DRIVER']; ?></li>
                 </ol>
               </li>
             </ol>
