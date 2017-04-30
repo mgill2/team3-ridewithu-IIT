@@ -74,45 +74,30 @@ require_once('../scripts/Database/connectdatabase.php');
               <li class="user-info">
                 <ol class="location-title">
                   <li>Name</li>
-                </ol>
-              </li>
-              <li class="user-info">
-                <ol class="location">
-                  <li><?php echo $row['NAME']; ?></li>
-                </ol>
-              </li>
-              <li class="user-info">
-                <ol class="location-title">
-                  <li>Email</li>
-                </ol>
-              </li>
-              <li class="user-info">
-                <ol class="location">
-                  <li><?php echo $row['EMAIL']; ?></li>
-                </ol>
-              </li>
-              <li class="user-info">
-                <ol class="location-title">
                   <li>Origin</li>
                   <li>Destination</li>
                 </ol>
               </li>
               <li class="user-info">
                 <ol class="location">
+                  <li><?php echo $row['NAME']; ?></li>
                   <li><?php echo $row['ORIGIN']; ?></li>
                   <li><?php echo $row['DESTINATION']; ?></li>
                 </ol>
               </li>
               <li class="user-info">
                 <ol class="date-time-header">
+                  <li>Email</li>
                   <li>Date</li>
                   <li>Time</li>
                 </ol>
               </li>
               <li class="user-info">
                 <ol class="date-time-value">
+                  <li><?php echo $row['EMAIL']; ?></li>
                   <li><?php echo $row['LEAVING_DATE']; ?></li>
                   <li><?php echo $row['LEAVING_TIME']; ?></li>
+                  <li><a href="../scripts/Database/ride.php?id=<?php echo $row['ID']; ?>">Give A Ride</a></li>
                 </ol>
               </li>
             </ol>
@@ -123,4 +108,5 @@ require_once('../scripts/Database/connectdatabase.php');
 	die( "Destination and origin are not set");
   }
 */
-?>
+?></body>
+</html>
