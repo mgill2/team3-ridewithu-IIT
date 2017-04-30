@@ -98,6 +98,7 @@ require_once('../scripts/Database/connectdatabase.php');
                   <li><?php echo $row['LEAVING_DATE']; ?></li>
                   <li><?php echo $row['LEAVING_TIME']; ?></li>
                   <li><a href="../scripts/Database/ride.php?id=<?php echo $row['ID']; ?>">Give A Ride</a></li>
+                  <li>Driver - <?php echo $row['DRIVER']; ?></li>
                 </ol>
               </li>
             </ol>
