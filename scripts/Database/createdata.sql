@@ -22,5 +22,6 @@ CREATE TABLE IF NOT EXISTS listride
   DESTINATION varchar(200)   NOT NULL,
   LEAVING_DATE varchar(15)   NOT NULL,
   LEAVING_TIME varchar(20)   NOT NULL,
+  DRIVER varchar(100)        DEFAULT 'Driver Not Assigned',
   KEY (ID)
 );
