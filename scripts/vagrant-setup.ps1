@@ -23,6 +23,30 @@ DO
   $cont=read-host "Do you want to delete any more boxes? (y/n)"
 }while($cont -eq "y" -OR $cont -eq "Y") 
 
+
+#deleteing old artifacts
+$oldArt=read-host "Would you like to delete the old artifacts? (y/n)"
+
+if ($oldArt -eq "y" -OR $oldArt -eq "Y")
+{
+  cd "./database"
+  rm .vagrant
+  rm ./Vagrantfile
+  
+  cd "../database-slave"
+  rm .vagrant
+  rm ./Vagrantfile
+  
+  cd "../webserver"
+  rm .vagrant
+  rm ./Vagrantfile
+}
+
+else 
+{
+  write-host "Be careful becuase when you do vagrant up it will take the old artifacts"
+}
+
 #asking the user to name the boxes
 $name=read-host "Please name the box of the database server. Example: database-server"
 
@@ -42,10 +66,10 @@ cd "./database"
 vagrant.exe init database-server
 
 #changing the ip address of the machine 
-$ans=read-host "Would you like to make your database server a public IP? (y/n) If yes specify the IP. Example: 192.168.1.200"
+$ans=read-host "Would you like to make your database server a public IP? (y/n)"
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
-    $ip=read-host "What is the new IP you want?"
+    $ip=read-host "What is the new IP you want? Example: 192.168.1.200"
     cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"$ip`""'}
   }
 
@@ -73,6 +97,15 @@ else
 cd "./webserver"
 
 vagrant.exe init webserver2
+
+#changing the ip address of the machine 
+$ans=read-host "Would you like to make your webserver a public IP? (y/n)"
+  if ($ans -eq "y" -OR $ans -eq "Y")
+  {
+    $ip=read-host "What is the new IP you want? Example: 192.168.1.200"
+    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"$ip`""'}
+  }
+
 vagrant.exe up
 
 #changing directories to build
@@ -94,6 +127,15 @@ else
 cd "./database-slave"
 
 vagrant.exe init $dataslave
+
+#changing the ip address of the machine 
+$ans=read-host "Would you like to make your database slave server a public IP? (y/n)"
+  if ($ans -eq "y" -OR $ans -eq "Y")
+  {
+    $ip=read-host "What is the new IP you want? Example: 192.168.1.201"
+    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"$ip`""'}
+  }
+
 vagrant.exe up
 
 
