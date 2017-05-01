@@ -47,6 +47,8 @@ else
   write-host "Be careful becuase when you do vagrant up it will take the old artifacts"
 }
 
+cd "../"
+
 #asking the user to name the boxes
 $name=read-host "Please name the box of the database server. Example: database-server"
 
@@ -61,22 +63,24 @@ else
   #running add box command
   vagrant.exe box add ./ubuntu-vanilla-14045-database-virtualbox.box --name $name
 }
+
 #getting box up and running
 cd "./database"
+
 vagrant.exe init database-server
 
 #changing the ip address of the machine 
 $ans=read-host "Would you like to make your database server a public IP? (y/n)"
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
-    $ip=read-host "What is the new IP you want? Example: 192.168.1.200"
-    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"$ip`""'}
+    $ip=read-host "The new ip is going to be 192.168.1.220"
+    cat .\Vagrantfile | %{$_ -replace "# config.vm.network `"public_network`"", "config.vm.network `"public_network`", ip: `"192.168.1.220`""}
   }
 
 vagrant.exe up
 
 #changing directories to build
-cd "../"
+cd "../webserver"
 
 #asking the user to name the boxes
 $webserver=read-host "Please name the box of the webserver. Example: webserver"
@@ -93,17 +97,13 @@ else
   vagrant.exe box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $webserver
 }
 
-#getting box up and running
-cd "./webserver"
-
-vagrant.exe init webserver2
+vagrant.exe init webserver
 
 #changing the ip address of the machine 
-$ans=read-host "Would you like to make your webserver a public IP? (y/n)"
+$ans=read-host "Would you like to make your webserver a public IP? (y/n) The ip will be changed to 192.168.1.219"
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
-    $ip=read-host "What is the new IP you want? Example: 192.168.1.200"
-    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"$ip`""'}
+    cat .\Vagrantfile | %{$_ -replace "# config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"192.168.1.219`""}
   }
 
 vagrant.exe up
@@ -132,8 +132,8 @@ vagrant.exe init $dataslave
 $ans=read-host "Would you like to make your database slave server a public IP? (y/n)"
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
-    $ip=read-host "What is the new IP you want? Example: 192.168.1.201"
-    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"$ip`""'}
+    $ip=read-host "The new ip is going to be 192.168.1.221"
+    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"192.168.1.221`""'}
   }
 
 vagrant.exe up
