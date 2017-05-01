@@ -24,14 +24,14 @@ echo "Do you want to remove another box?"
     echo "Exiting loop"
     break
   fi
-done
+done 
 
 #removing older artifacts
 echo "Would you like to delete the older artifacts? (y/n)"
   read delOld
 if [ $awnser = "y" ] || [ $awnser = "Y" ]
   then
-    cd "./database"
+    cd "../database"
     rm .vagrant
     rm Vagrantfile
 
@@ -47,10 +47,7 @@ if [ $awnser = "y" ] || [ $awnser = "Y" ]
     cd "../"
   else [ $awnser = "n" ] || [ $awnser = "N" ]
     echo "Be careful when running vagrant init and vagrant up it will take the old artifact"
-fi  
-
-#going into the build folder
-cd "../"
+fi 
 
 #adding database boxes
 echo "Please enter the name of your box you would like to create for the database. Example: database-server"
