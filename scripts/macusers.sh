@@ -56,6 +56,7 @@ echo "Please enter the name of your box you would like to create for the databas
 if [ $database = "" ] && [ $database = 0 ]
 then
   $database = database
+  vagrant box add --name $database ./ubuntu-vanilla-14045-database-virtualbox.box
 
 else
   vagrant box add --name $database ./ubuntu-vanilla-14045-database-virtualbox.box
@@ -76,6 +77,7 @@ echo "Please enter the name of your box you would like to create for the webserv
 if [ $webserver = "" ] && [ $webserver = 0 ]
 then
   $webserver = webserver
+  vagrant box add --name $webserver ubuntu-vanilla-14045-webserver-virtualbox.box
 
 else
   vagrant box add --name $webserver ubuntu-vanilla-14045-webserver-virtualbox.box 
@@ -95,6 +97,7 @@ echo "Please enter the name of your box you would like to create for the databas
 if [ $dataslave = "" ] && [ $dataslave = 0 ]
 then
   $dataslave = database-slave
+  vagrant box add --name $dataslave ubuntu-vanilla-14045-database-slave-virtualbox.box
 
 else
   vagrant box add --name $dataslave ubuntu-vanilla-14045-database-slave-virtualbox.box
