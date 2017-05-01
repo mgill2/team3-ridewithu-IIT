@@ -133,7 +133,7 @@ $ans=read-host "Would you like to make your database slave server a public IP? (
   if ($ans -eq "y" -OR $ans -eq "Y")
   {
     $ip=read-host "The new ip is going to be 192.168.1.221"
-    cat .\Vagrantfile | %{$'_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"192.168.1.221`""'}
+    cat .\Vagrantfile | %{$_ -replace "#config.vm.network `"public_network`"", `"config.vm.network `"public_network`", ip: `"192.168.1.221`""}
   }
 
 vagrant.exe up
