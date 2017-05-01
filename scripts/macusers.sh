@@ -31,7 +31,7 @@ echo "Would you like to delete the older artifacts? (y/n)"
   read delOld
 if [ $awnser = "y" ] || [ $awnser = "Y" ]
   then
-    cd "../database"
+    cd "./database"
     rm .vagrant
     rm Vagrantfile
 
@@ -89,6 +89,7 @@ cd "./webserver"
 vagrant init $webserver
 vagrant up
 
+#changing to the build directory
 cd "../"
 
 echo "Please enter the name of your box you would like to create for the database. Example: database-slave"
