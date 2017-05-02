@@ -81,25 +81,25 @@ go into database folder (add one if you do not have one in build)
 
 ```<b>vagrant init database-server</b>``` (if you named it this)
 
-```<b>vagrant up</b>
+```<b>vagrant up</b>```
 
-<b>vagrant ssh</b>```
+```<b>vagrant ssh</b>```
 
 go to webserver folder (add one if you do not have one in build) 
 
 ```<b>vagrant init webserver</b>``` (if you named it this)
 
-```<b>vagrant up</b> 
+```<b>vagrant up</b> ```
 
-<b>vagrant ssh</b>```
+```<b>vagrant ssh</b>```
 
 3. ### FOR WINDOWS USERS run each of these one at a time, starting the next one after the other is completely finished:
 
-```<b>packer build --force ubuntu14045-vanilla-database.json</b>
+```<b>packer build --force ubuntu14045-vanilla-database.json</b>```
 
-<b>packer build --force ubuntu14045-vanilla-webserver.json</b>
+```<b>packer build --force ubuntu14045-vanilla-webserver.json</b>```
 
-<b>packer build --force ubuntu14045-vanilla-database-slave.json</b>```
+```<b>packer build --force ubuntu14045-vanilla-database-slave.json</b>```
 
 For running the script vagrant-setup.ps1 (this skips the steps of removing boxes, vagrant init, and vagrant up):
 
@@ -126,17 +126,17 @@ go into database folder (add one if you do not have one in build)
 
 ```<b>vagrant init database-server</b>``` (if you named it this)
 
-```<b>vagrant up</b>
+```<b>vagrant up</b>```
 
-<b>vagrant ssh</b>```
+```<b>vagrant ssh</b>```
 
 go to webserver folder (add one if you do not have one in build) 
 
 ```<b>vagrant init webserver</b>``` (if you named it this)
 
-```<b>vagrant up</b> 
+```<b>vagrant up</b> ```
 
-<b>vagrant ssh</b>```
+```<b>vagrant ssh</b>```
 
 4. ### After Webserver and Database are Set Up:
 
