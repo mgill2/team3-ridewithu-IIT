@@ -97,16 +97,6 @@ else
   echo "database slave did NOT create"
 fi
 
-#running mysql script from ./Database folder to run the change master to command in #mysql so the slave can replicate
-mysql -u root < change-master-to.sql
-if [ $? = 0 ]
-then
-  echo "change master to command completed successfully"
-else
-  echo "change master to command did NOT complete"
-fi
-
-
 #changing the bind address to database slave address
 sudo sed -i 's/127\.0\.0\.1/192\.168\.1\.221/' /etc/mysql/my.cnf
 if [ $? = 0 ]
