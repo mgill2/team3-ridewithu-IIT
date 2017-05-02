@@ -30,11 +30,16 @@
       }
     }
     else {
-      echo "<script>alert('Sorry! Ride cannot be deleted');</script>";
+      echo "<script>
+          alert('Sorry! Only Requested User Can Delete Ride');
+          window.location.href='../../src/ridelist.php';
+          </script>";
     }
   }
   else {
-    echo "<script>console.log('Something wrong'); </script>";
-  }
+    echo "<script>
+          alert('Sorry! Something Went Wrong');
+          window.location.href='../../src/ridelist.php';
+          </script>";  }
 ?>
                     
