@@ -6,6 +6,26 @@
 #changing directory
 cd "../build"
 
+echo "Purging directories..."
+if [ -d "$database" ]; then
+  # Control will enter here if $DIRECTORY exists.
+  rmdir database
+fi
+
+echo "Purging directories..."
+if [ -d "$database-slave" ]; then
+  # Control will enter here if $DIRECTORY exists.
+  rmdir database-slave
+fi
+
+echo "Purging directories..."
+if [ -d "$webserver" ]; then
+  # Control will enter here if $DIRECTORY exists.
+  rmdir webserver
+fi
+
+echo "Done."
+
 echo "Checking if database directory has been created"
 if [ ! -d "$database" ]; then
   # Control will enter here if $DIRECTORY doesn't exist.
@@ -47,29 +67,6 @@ echo "Do you want to remove another box?"
   fi
 done
 
-#removing older artifacts
-echo "Would you like to delete the older artifacts? (y/n)"
-  read delOld
-if [ $awnser = "y" ] || [ $awnser = "Y" ]
-  then
-    cd "./database"
-    rm .vagrant
-    rm Vagrantfile
-
-    cd "../database-slave"
-    rm .vagrant
-    rm Vagrantfile
-
-    cd "../webserver"
-    rm .vagrant
-    rm Vagrantfile
-
-    #going into the build folder
-    cd "../"
-  else [ $awnser = "n" ] || [ $awnser = "N" ]
-    echo "Be careful when running vagrant init and vagrant up it will take the old artifact"
-fi  
-
 #going into the build folder
 cd "../"
 
@@ -82,7 +79,7 @@ then
   $database = database
 
 else
-  vagrant box add --name $database ./ubuntu-vanilla-14045-database-virtualbox.box
+  vagrant box add ubuntu-vanilla-14045-database-virtualbox.box --name $database
 fi
 
 #getting box up and running
@@ -102,7 +99,7 @@ then
   $webserver = webserver
 
 else
-  vagrant box add --name $webserver ubuntu-vanilla-14045-webserver-virtualbox.box 
+  vagrant box add ubuntu-vanilla-14045-webserver-virtualbox.box --name $webserver
 fi
 
 #getting box up and running
@@ -121,7 +118,7 @@ then
   $dataslave = database-slave
 
 else
-  vagrant box add --name $dataslave ubuntu-vanilla-14045-database-slave-virtualbox.box
+  vagrant box add ubuntu-vanilla-14045-database-slave-virtualbox.box --name $dataslave
 fi
   
 #changing to database slave directory
