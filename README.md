@@ -153,7 +153,7 @@ cd scripts
 
 ############ MYSQL Master Slave Replication steps ##############
 
-1. Login into the database vagrant box and do 
+1. Login into the database vagrant box and do if you do not run the scripts
   	b. Show databases;
 		c. Use (database name);
 		d. FLUSH TABLES WITH READ LOCK;
