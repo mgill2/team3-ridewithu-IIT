@@ -151,4 +151,18 @@ cd scripts
 >Then do vagrant reload --provision in each one.
 >
 
-//additon
+############ MYSQL Master Slave Replication steps ##############
+
+1. Login into the database vagrant box and do if you do not run the scripts
+  	b. Show databases;
+		c. Use (database name);
+		d. FLUSH TABLES WITH READ LOCK;
+		e. Show master status;
+    f. Write down the file and the position
+    g. UNLOCK TABLES;
+  run sudo service mysql restart
+    
+2. Login into the slave vagrant box
+    b. run change-master-to.sql in Database folder using mysql < change-master-to.sql 
+    c. sudo service mysql restart
+

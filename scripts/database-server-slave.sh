@@ -144,14 +144,4 @@ else
 fi
 
 
-#restarting the mysql to take the changes made
-sudo service mysql restart
-if [ $? = 0 ]
-then
-  echo "restarting mysql completed successfully"
-else
-  echo "mysql restart did NOT complete"
-fi
-
-
 exit 0

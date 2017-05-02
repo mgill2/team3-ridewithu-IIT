@@ -24,7 +24,7 @@ echo "Do you want to remove another box?"
     echo "Exiting loop"
     break
   fi
-done
+done 
 
 #removing older artifacts
 echo "Would you like to delete the older artifacts? (y/n)"
@@ -47,10 +47,7 @@ if [ $awnser = "y" ] || [ $awnser = "Y" ]
     cd "../"
   else [ $awnser = "n" ] || [ $awnser = "N" ]
     echo "Be careful when running vagrant init and vagrant up it will take the old artifact"
-fi  
-
-#going into the build folder
-cd "../"
+fi 
 
 #adding database boxes
 echo "Please enter the name of your box you would like to create for the database. Example: database-server"
@@ -59,6 +56,7 @@ echo "Please enter the name of your box you would like to create for the databas
 if [ $database = "" ] && [ $database = 0 ]
 then
   $database = database
+  vagrant box add --name $database ./ubuntu-vanilla-14045-database-virtualbox.box
 
 else
   vagrant box add --name $database ./ubuntu-vanilla-14045-database-virtualbox.box
@@ -79,6 +77,7 @@ echo "Please enter the name of your box you would like to create for the webserv
 if [ $webserver = "" ] && [ $webserver = 0 ]
 then
   $webserver = webserver
+  vagrant box add --name $webserver ubuntu-vanilla-14045-webserver-virtualbox.box
 
 else
   vagrant box add --name $webserver ubuntu-vanilla-14045-webserver-virtualbox.box 
@@ -90,6 +89,7 @@ cd "./webserver"
 vagrant init $webserver
 vagrant up
 
+#changing to the build directory
 cd "../"
 
 echo "Please enter the name of your box you would like to create for the database. Example: database-slave"
@@ -98,6 +98,7 @@ echo "Please enter the name of your box you would like to create for the databas
 if [ $dataslave = "" ] && [ $dataslave = 0 ]
 then
   $dataslave = database-slave
+  vagrant box add --name $dataslave ubuntu-vanilla-14045-database-slave-virtualbox.box
 
 else
   vagrant box add --name $dataslave ubuntu-vanilla-14045-database-slave-virtualbox.box
