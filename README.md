@@ -151,4 +151,11 @@ cd scripts
 >Then do vagrant reload --provision in each one.
 >
 
-//additon
+############ MYSQL Master Slave Replication steps ##############
+
+1. Login into the database vagrant box and do 
+  	b. Show databases;
+		c. Use (database name);
+		d. FLUSH TABLES WITH READ LOCK;
+		e. Show master status;
+    f. Write down the file and the position
