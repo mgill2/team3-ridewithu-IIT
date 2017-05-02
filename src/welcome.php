@@ -22,7 +22,7 @@ else {
 <body class="index">
   <header>
       <div class="banner">
-        <a href="welcome.html">
+        <a href="welcome.php">
           <img src="img/IITScarletHawks.png" alt="IIT Logo">
         </a>
         <img src="img/IITRideShare.png" alt="Ride Share Logo">
