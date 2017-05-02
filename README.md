@@ -8,7 +8,7 @@ Matt- *Operations*
 Paul- *UI Design* 
 Alejandro- *Security*
 
-==============Some Notes========================
+==============GETTING STARTED-(IMPORTANT)=======================
 
 The .my.cnf for the master database is in the 
 Database folder.
@@ -16,9 +16,8 @@ Database folder.
 The other .my.cnf is in the scripts directory
 which is for the slave database.
 
-In the build drectory, make sure to have database, database-slave,
-and webserver directories. ADD IF NEEDED! BEFORE 
-RUNNING ANYTHING
+In the build directory, make sure to have database, database-slave,
+and webserver directories. The script should add these if they do not exist but ADD IF NEEDED!
 
 If not running local host change the IP in
 the sed commands in the database and 
