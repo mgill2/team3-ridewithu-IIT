@@ -1,7 +1,12 @@
 <?php
 session_start();
-if (!isset($_SESSION['username']))
+if (!isset($_SESSION['username'])) {
     header("Location: index.php");
+}
+else {
+  $name = $_SESSION['name'];
+  //echo "<script>console.log('$first_name');</script>";
+}
 ?>
 
 <!DOCTYPE html>
