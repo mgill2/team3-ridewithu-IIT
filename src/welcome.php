@@ -1,8 +1,9 @@
 <?php
-  session_start();
-  $name = $_SESSION['name'];
-  //echo "<script>console.log('$first_name');</script>";
+session_start();
+if (!isset($_SESSION['username']))
+    header("Location: index.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en" class="nojs">
 <head>
