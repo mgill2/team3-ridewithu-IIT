@@ -58,7 +58,7 @@ fi
 #  echo "sed did NOT complete"
 #fi
 
-git clone "https://3e293382e7c9adec19edf54b8ff7e259143725bb@github.com/illinoistech-itm/team-3-withu.git"
+git clone "https://YOUR_TOKEN_HERE@github.com/illinoistech-itm/team-3-withu.git"
 if [ $? = 0 ]
 then
   echo "added git hub repo successfully"
